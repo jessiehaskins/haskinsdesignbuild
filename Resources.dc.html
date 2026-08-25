@@ -9,15 +9,8 @@
 <x-dc>
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>body{margin:0;background:#1c1420} a{color:#e29bcb} a:hover{color:#f0b8dc}
-    .pf-menu{position:relative}
-    .pf-menu .pf-drop{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;z-index:40}
-    .pf-menu:hover .pf-drop,.pf-menu:focus-within .pf-drop{display:block}
-    .pf-drop-inner{background:#241b2b;border:1px solid rgba(246,238,248,0.12);border-radius:14px;padding:8px;min-width:230px;box-shadow:0 14px 40px rgba(0,0,0,0.45);display:flex;flex-direction:column}
-    .pf-drop-inner a{display:block;padding:9px 14px;border-radius:9px;text-decoration:none;color:#f6eef8;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap}
-    .pf-drop-inner a:hover{background:rgba(226,155,203,0.16);color:#f0b8dc}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>body{margin:0;background:#1c1420} a{color:#e29bcb} a:hover{color:#f0b8dc}</style>
 </helmet>
 <div style="background:#1c1420;color:#f6eef8;min-height:100vh;font-family:'Work Sans',sans-serif">
 
@@ -25,35 +18,41 @@
     <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:27px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
     <div style="display:flex;align-items:center;gap:24px">
       <a href="About.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">About</a>
-      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
       <a href="Pricing.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Pricing</a>
       <a href="Resources.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Resources</a>
-      <a href="BehindTheBuild.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Behind the Build</a>
-      <a href="HowTos.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">How To's</a>
       <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
     </div>
   </nav>
 
-  <section style="position:relative;overflow:hidden;padding:88px clamp(20px,5vw,72px) 56px">
-    <div style="position:absolute;top:-120px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(226,155,203,0.3),transparent 70%);filter:blur(8px);pointer-events:none"></div>
-    <div style="max-width:1200px;margin:0 auto;position:relative">
-      <h1 style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:clamp(32px,4.6vw,52px);line-height:1.1;margin:0 0 20px">Behind the Build</h1>
-      <p style="font-size:17px;line-height:1.65;max-width:58ch;margin:0;color:rgba(246,238,248,0.72)">Coming soon.</p>
+  <section style="max-width:1200px;margin:0 auto;padding:72px clamp(20px,5vw,72px) 40px">
+    <h1 style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.04em;font-size:clamp(24px,3.4vw,38px);line-height:1.15;margin:0 0 16px">Resources</h1>
+    <p style="font-size:17px;line-height:1.75;max-width:66ch;margin:0;color:rgba(246,238,248,0.72)">A future space for all of my favorite books, resources, local referrals, lessons learned, and simple how-to's.</p>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:24px clamp(20px,5vw,72px) 72px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap">
+      <span style="display:block;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#c9a9d6;font-weight:600">Behind the Build</span>
+      <a href="BehindTheBuild.dc.html" style="text-decoration:none;color:#e29bcb;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:6px">All posts &amp; videos<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
     </div>
+    <p style="font-size:15px;line-height:1.6;margin:0;color:rgba(246,238,248,0.55)">Coming soon.</p>
   </section>
 
   <section style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 96px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap">
+      <span style="display:block;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#c9a9d6;font-weight:600">How To's</span>
+      <a href="HowTos.dc.html" style="text-decoration:none;color:#e29bcb;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:6px">All how to's<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+    </div>
+    <p style="font-size:15px;line-height:1.6;margin:0;color:rgba(246,238,248,0.55)">Coming soon.</p>
   </section>
 
   <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
     <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:27px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
     <div style="display:flex;align-items:center;gap:24px">
       <a href="About.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">About</a>
-      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
       <a href="Pricing.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Pricing</a>
       <a href="Resources.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Resources</a>
-      <a href="BehindTheBuild.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Behind the Build</a>
-      <a href="HowTos.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">How To's</a>
       <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
     </div>
   </nav>
@@ -61,17 +60,5 @@
   <div style="max-width:1200px;margin:0 auto;padding:24px clamp(20px,5vw,72px);font-size:13px;color:rgba(246,238,248,0.45)">Haskins Design &amp; Build</div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  renderVals() {
-    const videos = [
-      { type: 'Video', title: 'Behind the build: a kitchen remodel', status: 'Coming soon' },
-      { type: 'Video', title: 'Walkthrough: a rainwater catchment install', status: 'Coming soon' },
-      { type: 'Video', title: 'From gravel driveway to finished yard', status: 'Coming soon' }
-    ];
-    return { videos };
-  }
-}
-</script>
 </body>
 </html>

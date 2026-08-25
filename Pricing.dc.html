@@ -9,7 +9,7 @@
 <x-dc>
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>body{margin:0;background:#1c1420} a{color:#e29bcb} a:hover{color:#f0b8dc}</style>
 </helmet>
 <div style="background:#1c1420;color:#f6eef8;min-height:100vh;font-family:'Work Sans',sans-serif">
@@ -18,7 +18,7 @@
     <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:27px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
     <div style="display:flex;align-items:center;gap:24px">
       <a href="About.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">About</a>
-      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
       <a href="Pricing.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Pricing</a>
       <a href="Resources.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Resources</a>
       <a href="BehindTheBuild.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Behind the Build</a>
@@ -27,22 +27,39 @@
     </div>
   </nav>
 
-  <section style="position:relative;overflow:hidden;padding:120px clamp(20px,5vw,72px)">
-    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(28,20,32,0.4),rgba(28,20,32,0.6)),url('bg-texture.png');background-size:cover;background-position:center"></div>
-    <div style="max-width:1100px;margin:0 auto;position:relative">
-      <h1 style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:clamp(32px,4.6vw,52px);line-height:1.1;margin:0 0 20px">Contact</h1>
-      <a href="{{ mailHref }}" style="display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;background:#e29bcb;color:#1c1420;text-decoration:none;font-weight:700;font-size:16px;letter-spacing:0.01em">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        <span>{{ mailLabel }}</span>
-      </a>
+  <section style="max-width:860px;margin:0 auto;padding:72px clamp(20px,5vw,72px) 32px">
+    <h1 style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.04em;font-size:clamp(24px,3.4vw,38px);line-height:1.15;margin:0 0 28px">Pricing</h1>
+    <p style="font-size:17px;line-height:1.75;margin:0;color:rgba(246,238,248,0.78)">Haskins Design &amp; Build is a landscape design / build firm that offers design and installation with maintenance guidance, and often referrals for local maintenance partners. Before a new custom landscape project begins, the client has a choice of two different types of consultations. Budgets for our custom landscapes start at $30,000 minimum and go up from there depending on size, client preferences and site factors.</p>
+  </section>
+
+  <section style="max-width:860px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 96px;display:grid;gap:24px">
+    <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:28px">
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;font-size:18px;line-height:1.35;margin:0 0 6px">Design Consultation</h2>
+      <p style="font-size:22px;font-weight:700;color:#e29bcb;margin:0 0 18px">$250 flat rate</p>
+      <ul style="margin:0;padding:0 0 0 20px;font-size:16px;line-height:1.7;color:rgba(246,238,248,0.75);display:grid;gap:8px">
+        <li>One hour on-site consultation.</li>
+        <li>Details, referrals, and ideas discussed will be shared following the consultation.</li>
+        <li>Consultation fee is paid up-front and applied to the cost of a landscape design and/or installation project.</li>
+      </ul>
     </div>
+
+    <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:28px">
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;font-size:18px;line-height:1.35;margin:0 0 6px">Landscape Design and Layout Plan with Estimate</h2>
+      <p style="font-size:22px;font-weight:700;color:#e29bcb;margin:0 0 18px">$150 an hour</p>
+      <ul style="margin:0;padding:0 0 0 20px;font-size:16px;line-height:1.7;color:rgba(246,238,248,0.75);display:grid;gap:8px">
+        <li>Concept plans (sketch on site survey) with layout of landscape, hardscape, and location of design elements &ndash; average time for a &frac14; acre landscape is 3-5 hours.</li>
+        <li>Planting plans (photo-realistic sketch of plants at maturity) showing the location, name, size, and quantity of plants &ndash; average time for a planting plan for a &frac14; acre landscape is 5-10 hours after concept plan is approved.</li>
+      </ul>
+    </div>
+
+    <a href="Contact.dc.html" style="justify-self:start;display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;background:#e29bcb;color:#1c1420;text-decoration:none;font-weight:700;font-size:15px">Start a conversation</a>
   </section>
 
   <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
     <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:27px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
     <div style="display:flex;align-items:center;gap:24px">
       <a href="About.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">About</a>
-      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
       <a href="Pricing.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Pricing</a>
       <a href="Resources.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Resources</a>
       <a href="BehindTheBuild.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Behind the Build</a>
@@ -51,18 +68,8 @@
     </div>
   </nav>
 
-  <div style="max-width:1100px;margin:0 auto;padding:24px clamp(20px,5vw,72px);font-size:13px;color:rgba(246,238,248,0.45)">Haskins Design &amp; Build</div>
+  <div style="max-width:860px;margin:0 auto;padding:24px clamp(20px,5vw,72px);font-size:13px;color:rgba(246,238,248,0.45)">Haskins Design &amp; Build</div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  renderVals() {
-    // Assembled at runtime so the address never appears as plain text in the HTML source.
-    const u = ['jessie', 'haskinsdesignbuild', 'com'];
-    const addr = u[0] + String.fromCharCode(64) + u[1] + '.' + u[2];
-    return { mailHref: 'mai' + 'lto:' + addr, mailLabel: addr };
-  }
-}
-</script>
 </body>
 </html>
