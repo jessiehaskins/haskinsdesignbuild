@@ -68,7 +68,7 @@
       </sc-for>
       <sc-for list="{{ photoSlots }}" as="slot" hint-placeholder-count="4">
         <div onClick="{{ slot.onClick }}" style="cursor:zoom-in">
-          <image-slot id="{{ slot.id }}" ref="{{ slot.ref }}" shape="rounded" radius="14" style="width:100%;aspect-ratio:4/3" placeholder="Add a photo"></image-slot>
+          <image-slot id="{{ slot.id }}" src="{{ slot.src }}" ref="{{ slot.ref }}" shape="rounded" radius="14" style="width:100%;aspect-ratio:4/3" placeholder="Add a photo"></image-slot>
         </div>
       </sc-for>
     </div>
@@ -144,6 +144,13 @@ const LANDSCAPING_PROJECTS = [
     body: "This landscape was designed by Falonland Studios and installed by me and my crews. This neighborhood has some tall yards, and Falon worked with that steep slope of their front yard brilliantly by incorporating two large framed garden beds with stairs in between, and filled them with enough rosemary to support the entire City of Houston in making some fresh rosemary focaccia. The homeowners especially enjoyed when neighbors shared what they made with the rosemary they borrowed. The high ground between the house and back of the raised bed is where the cacti and drought-tolerant plants were set in gravel. A loquat tree was planted by the front door and two stellar cordia trees (Texas olive trees) on the perimeter. The maintenance for this yard included routinely clearing the gravel of volunteers, trimming the ground cover area to keep its shape, and giving the hardy perennials a haircut 1-2/year." }
 ];
 
+const SLOT_PHOTOS = {
+  'museum-cacti-cordia-p3': './slot-museum-cacti-cordia-p3.webp',
+  'handsomeness-heights-p1': './slot-handsomeness-heights-p1.webp',
+  'handsomeness-heights-p2': './slot-handsomeness-heights-p2.webp',
+  'handsomeness-heights-p3': './slot-handsomeness-heights-p3.webp',
+  'handsomeness-heights-p4': './slot-handsomeness-heights-p4.webp'
+};
 class Component extends DCLogic {
   state = { projects: LANDSCAPING_PROJECTS, photoSlotIds: null, bulkOver: false, lightboxUrl: null };
   _pendingFiles = new Map();
@@ -219,7 +226,7 @@ class Component extends DCLogic {
       openHeroLightbox: () => this.setState({ lightboxUrl: project.img }),
       closeLightbox: () => this.setState({ lightboxUrl: null }),
       uploadedPhotos: uploadedFiles.map(src => ({ src, onClick: () => this.setState({ lightboxUrl: src }) })),
-      photoSlots: slotIds.map(id => ({ id, ref: makeRef(id), onClick: openSlotLightbox(id) })),
+      photoSlots: slotIds.map(id => ({ id, src: SLOT_PHOTOS[id] || '', ref: makeRef(id), onClick: openSlotLightbox(id) })),
       prevHref: prev ? `Project-Landscaping.dc.html?slug=${prev.slug}` : '#',
       prevTitle: prev ? prev.title : '',
       nextHref: next ? `Project-Landscaping.dc.html?slug=${next.slug}` : '#',

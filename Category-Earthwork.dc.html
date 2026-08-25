@@ -65,7 +65,7 @@
     <div style="display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:60px;grid-auto-flow:dense;gap:16px">
       <sc-for list="{{ slots }}" as="s" hint-placeholder-count="9">
         <div style="grid-column:{{ s.col }};grid-row:{{ s.row }};aspect-ratio:{{ s.ratio }};align-self:{{ s.align }};position:relative;overflow:hidden;border-radius:14px">
-          <image-slot id="{{ s.id }}" shape="rounded" radius="14" style="width:100%;height:100%" placeholder="Photo"></image-slot>
+          <image-slot id="{{ s.id }}" src="{{ s.src }}" shape="rounded" radius="14" style="width:100%;height:100%" placeholder="Photo"></image-slot>
           <sc-if value="{{ s.arranging }}" hint-placeholder-val="{{ false }}">
             <div style="position:absolute;inset:0;background:rgba(28,20,32,0.55);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:8px">
               <div style="display:flex;align-items:center;gap:6px">
@@ -117,6 +117,11 @@
 </div></x-dc>
 <script type="text/x-dc" data-dc-script>
 const EARTHWORK_KEY = 'earthwork-gallery-layout-v1';
+const EARTHWORK_PHOTOS = {
+  'earthwork-gallery-0': './slot-earthwork-gallery-0.webp',
+  'earthwork-gallery-1': './slot-earthwork-gallery-1.webp',
+  'earthwork-gallery-5': './slot-earthwork-gallery-5.webp'
+};
 const EARTHWORK_DEFAULT = [
   { id: 'earthwork-gallery-0', c: 2, r: 7, ratio: '665 / 1182' },
   { id: 'earthwork-gallery-1', c: 4, r: 10, ratio: '509 / 678' },
@@ -200,6 +205,7 @@ class Component extends DCLogic {
       },
       slots: tiles.map((t, i) => ({
         id: t.id,
+        src: EARTHWORK_PHOTOS[t.id] || '',
         col: 'span ' + t.c,
         row: 'span ' + t.r,
         ratio: t.ratio || 'auto',
