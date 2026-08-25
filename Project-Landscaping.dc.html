@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>body{margin:0;background:#1c1420} a{color:#e29bcb} a:hover{color:#f0b8dc}
+    .pf-menu{position:relative}
+    .pf-menu .pf-drop{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;z-index:40}
+    .pf-menu:hover .pf-drop,.pf-menu:focus-within .pf-drop{display:block}
+    .pf-drop-inner{background:#241b2b;border:1px solid rgba(246,238,248,0.12);border-radius:14px;padding:8px;min-width:230px;box-shadow:0 14px 40px rgba(0,0,0,0.45);display:flex;flex-direction:column}
+    .pf-drop-inner a{display:block;padding:9px 14px;border-radius:9px;text-decoration:none;color:#f6eef8;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap}
+    .pf-drop-inner a:hover{background:rgba(226,155,203,0.16);color:#f0b8dc}
+  </style>
+</helmet>
+<div style="background:#1c1420;color:#f6eef8;min-height:100vh;font-family:'Work Sans',sans-serif">
+  <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+    <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:27px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
+    <div style="display:flex;align-items:center;gap:24px">
+      <a href="About.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">About</a>
+      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="BehindTheBuild.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Behind the Build</a>
+      <a href="HowTos.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">How To's</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+    </div>
+  </nav>
+
+  <section style="max-width:900px;margin:0 auto;padding:56px clamp(20px,5vw,72px) 8px">
+    <a href="Category-Landscaping.dc.html" style="text-decoration:none;color:#e29bcb;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:6px;margin-bottom:24px">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+      Back to Landscaping
+    </a>
+    <h1 style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:clamp(26px,3.8vw,42px);line-height:1.15;margin:0 0 14px">{{ project.title }}</h1>
+    <sc-if value="{{ project.tagline }}" hint-placeholder-val="{{ true }}">
+      <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:#c9a9d6;margin:0 0 4px;line-height:1.5">{{ project.tagline }}</p>
+    </sc-if>
+  </section>
+
+  <section style="max-width:1100px;margin:0 auto;padding:24px clamp(20px,5vw,72px) 48px">
+    <sc-if value="{{ project.img }}" hint-placeholder-val="{{ false }}">
+      <img src="{{ project.img }}" alt="{{ project.title }}" onClick="{{ openHeroLightbox }}" style="width:100%;border-radius:20px;display:block;object-fit:cover;max-height:640px;cursor:zoom-in">
+    </sc-if>
+    <sc-if value="{{ project.noImg }}" hint-placeholder-val="{{ false }}">
+      <image-slot id="{{ project.slug }}-hero" shape="rounded" radius="20" style="width:100%;aspect-ratio:16/9" placeholder="Add a photo"></image-slot>
+    </sc-if>
+  </section>
+
+  <section style="max-width:800px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 72px">
+    <sc-if value="{{ project.body }}" hint-placeholder-val="{{ true }}">
+      <p style="font-size:17px;line-height:1.8;margin:0;color:rgba(246,238,248,0.8);white-space:pre-line">{{ project.body }}</p>
+    </sc-if>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 56px">
+    <span style="display:block;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#c9a9d6;font-weight:600;margin-bottom:20px">More photos</span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px">
+      <sc-for list="{{ uploadedPhotos }}" as="photo" hint-placeholder-count="5">
+        <sc-if value="{{ photo.src }}" hint-placeholder-val="{{ false }}">
+          <img src="{{ photo.src }}" alt="Project photo" onClick="{{ photo.onClick }}" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block;cursor:zoom-in">
+        </sc-if>
+      </sc-for>
+      <sc-for list="{{ photoSlots }}" as="slot" hint-placeholder-count="4">
+        <div onClick="{{ slot.onClick }}" style="cursor:zoom-in">
+          <image-slot id="{{ slot.id }}" ref="{{ slot.ref }}" shape="rounded" radius="14" style="width:100%;aspect-ratio:4/3" placeholder="Add a photo"></image-slot>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <sc-if value="{{ lightboxUrl }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;background:rgba(15,10,15,0.9);z-index:100;display:flex;align-items:center;justify-content:center;padding:32px;cursor:zoom-out">
+      <img src="{{ lightboxUrl }}" alt="Enlarged photo" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.5)">
+      <button type="button" onClick="{{ closeLightbox }}" aria-label="Close" style="position:fixed;top:24px;right:28px;background:rgba(255,255,255,0.12);border:none;color:#fff;width:40px;height:40px;border-radius:999px;font-size:20px;cursor:pointer">×</button>
+    </div>
+  </sc-if>
+
+  <section style="max-width:1200px;margin:0 auto;padding:32px clamp(20px,5vw,72px) 72px;border-top:1.5px solid rgba(246,238,248,0.1);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <a href="{{ prevHref }}" style="text-decoration:none;color:#f6eef8;display:flex;align-items:center;gap:10px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+      <span><span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:rgba(246,238,248,0.45)">Previous</span>{{ prevTitle }}</span>
+    </a>
+    <a href="{{ nextHref }}" style="text-decoration:none;color:#f6eef8;display:flex;align-items:center;gap:10px;text-align:right">
+      <span><span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:rgba(246,238,248,0.45)">Next</span>{{ nextTitle }}</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+    </a>
+  </section>
+
+  <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+    <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:27px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
+    <div style="display:flex;align-items:center;gap:24px">
+      <a href="About.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">About</a>
+      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="BehindTheBuild.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Behind the Build</a>
+      <a href="HowTos.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">How To's</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+    </div>
+  </nav>
+  <div style="max-width:1200px;margin:0 auto;padding:24px clamp(20px,5vw,72px);font-size:13px;color:rgba(246,238,248,0.45)">Haskins Design &amp; Build</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const LANDSCAPING_PROJECTS = [
+  { slug: 'east-end-wildscape', title: 'East End Wildscape', img: './land-east-end-wildscape.jpeg',
+    tagline: 'Replaced 70% of lawn with structured landscape, new front deck, rear awning, driveway rebuild, surface drainage',
+    body: "I've loved all of my projects for their own reasons and I hate to play favorites, but this one is hard to beat. It's also my most recent completion, so maybe my work is aging like a good wine and each project is more lovable than the last. If only I could enjoy the wine - this type of work is fraught with all kinds of interesting emotions that I may need years of therapy to process. Large flagstone walkways, many baby native trees planted, short retention walls, frog fruit ground cover, tons of native bad hair day plants - mist flower, prairie aster, muhly, turk's cap, the usual." },
+  { slug: 'backyard-arboretum-meyerland', title: 'Backyard Arboretum in Meyerland', img: './land-backyard-arboretum.jpeg',
+    body: "OK, see, how does one play favorites? These lovely clients wanted a yard full of natives planted however I felt was best and the results were perfect. After this installation, Houston was hit by one big weather event after another and this yard continued to thrive in all the best ways. Mist flower, wine cup, crag lily, prairie aster, rock rose, muhly, salvias and sages, flame acanthus, etc etc. A handful of not-so-natives that were planted in perfectly contained areas where they could also, without threat of bullying the others, bring joy." },
+  { slug: 'bellaire-xeriscape', title: 'Bellaire Xeriscape', img: './land-bellaire-xeriscape.jpeg',
+    tagline: 'Complete landscape overhaul with minimal turf areas and irrigation-free gardens',
+    body: 'Xeriscape is kind of a naughty word in Houston. I don\'t entirely want to be asked for this type of landscape with how much rain we get here but there IS A WAY IT CAN BE DONE but it is NOT THE XERO MAINTENANCE you think it might be. I overheard someone at a party say, "I\'m so tired of mowing, I want to replace our lawn with gravel!" Nature is abundant and will grow grow grow here unless we really fully scorch the earth (if you want a lesson in abundance, start gardening in Houston) - so if you\'d like to trade your mowing for using enough chemicals to risk altering the hormones and overall health of you, your family, and your immediate environment OR want to spend time pulling the many volunteers that will show up by their roots (landscape fabric doesn\'t stop the birds from gardening and it traps roots of weeds so they can just keep re-sprouting), then go for it. Grading is critical in xeriscaping. Garden areas with cacti need to be BUILT UP so they stay high and dry. Soil needs to be on the sandy side. Surround them with arid-friendly plants like rock rose, guara, zexmenia, tall grasses, etc. When building up certain areas, drainage and runoff still needs to be accounted for and ideally managed within the landscape (without adding runoff to the neighbor\'s yard). If the neighbors have grass on the other side of your shared fence, you can bet on it migrating over into your gravel spaces, so in this case I planted ground cover as a border along the fence. The homeowner wasn\'t a fan of the ground cover - it was aggressive enough to be a strong natural border between the xeriscape and the neighbor\'s lawns, but it was usurping gravel areas enough to grow over the "xeri" in xeriscape. Once I pulled it, the volunteers/weeds rushed in. This is where the negotiation comes in to making a xeriscape-like yard in Houston. It\'s really hard to have bare earth in Houston as she wants to grow out of every spare inch (again, a blessing, if we know how to work with it), so we kind of choose our plants in Houston or they choose us. In planted areas where there is soil under just a bit of gravel, we need fully planted areas. We need to out-compete with chosen plants or we\'ll be fighting the weeds until the earth gives up and when that happens... I don\'t know, that\'s kind of a sad day because it also makes life harder for your intentional plants nearby. There were designated gravel areas that were given a well compacted 2"+ crushed concrete base layer, and the planted areas were about 1" of crushed granite gravel over soil. It was hot shortly after our installation in the summer of 2020, and the big freeze hit Houston the following winter and the roots of most plants survived, so I don\'t hate crushed granite gravel as mulch. It actually seemed to be a decent insulator. There\'s a whole lot more to this but all that said, I got to see it through many beautiful seasons of maturity. These clients were truly wonderful and I\'m grateful for the journey we got to take with their yard.' },
+  { slug: 'west-university-gardens', title: 'West University Gardens', img: './land-west-university.webp',
+    tagline: 'Landscape refresh, raised steel planter beds for veggie gardens in the front yard, pollinator gardens',
+    body: "These aren't my artichokes, but artichokes are my favorite flowers second only to seeing prairie aster in the wild, and are they an ancient gift from aliens? They're wild. These wonderful clients have for many cycles now taken an active role in these garden beds and every single iteration of clients experimenting in their yard makes me melt. Love to see it. In this yard, in summary, we made the most of an existing landscape design by reviving ground cover, supporting a stand of old existing cherry laurels, adding and replacing trees, and filling out the gardens. Favorite native trees planted here: an Anacua Sandpaper tree and Nuttall Oak. Existing Fringe tree is a repeat showstopper." },
+  { slug: 'urban-homestead-heights', title: 'Urban Homestead in Houston Heights', img: './land-urban-homestead.webp',
+    tagline: 'Gravel driveway, veggie gardens, fruit trees, rain catchment system, repurposed carport into shed, pollinator gardens, two pergolas, large deck with built in beds, paver patio' },
+  { slug: 'meyerland-landscape-remodel', title: 'Meyerland Landscape Remodel', img: './land-meyerland-remodel.jpeg',
+    tagline: 'Landscape remodel, rainwater-based smart irrigation system, gravel pad for playset, drainage improvements',
+    body: "This yard was a minimal design by the brilliant landscape architect of Falonland Studios. The homeowners also opted for a rainwater-based irrigation system with a 1,200g tank by Metal Rain Tanks. We installed a submersible well pump to run a full-yard irrigation system with drip lines in the beds and highly efficient MP rotator spray heads on the lawn. We installed a Wi-Fi enabled Rachio smart controller that syncs with local weather data to only turn on during long stretches without rain. The tank has an easy-access spigot for hand-watering and emergency use. For the twin boys' new playset, we installed an 18' x 20' x 12\" deep pea-gravel pad, double-lined with fabric at the base with staked poly lawn edging at the perimeter to keep grass at bay." },
+  { slug: 'leed-new-construction-heights', title: 'Complete Landscape Installation, L.E.E.D. New Construction in the Heights', img: './land-leed-heights.jpeg',
+    tagline: 'Complete landscape installation, rainwater-based irrigation, hardscaping and rain garden',
+    body: "The layout for this yard was designed by the impressive landscape architecture firm Asakura Robinson while the plant and hardscaping material selections were left to us, the homeowners and their designer. We weren't in charge of the rainwater catchment system installation here, but we installed an efficient irrigation system to run the water with a Wi-Fi-enabled Hydrawise smart controller that would sync with local weather data and was easy to control from an iPhone/Android app. We installed a large rain garden in the front yard to help excess rainfall percolate faster in an area of the street that was low and had no drainage ditch in place. I drove by many times over the following years and although the area still puddled, it was nothing like the pooling we saw all during the construction process. I have no official metrics but I'm pretty dang sure the thing worked! We also installed a 1,300 sf Texas limestone patio in a radial, sun-burst pattern around the round pool and fire pit. We installed gravel and paver walkways all around the house." },
+  { slug: 'montrose-new-construction', title: 'Montrose Landscape Design & Build - New Construction', img: './land-montrose-new-construction.jpeg',
+    tagline: 'Landscape design & build, rainwater catchment system, permeable paver driveway',
+    body: 'The homeowner of this project insisted on very few things: no grass, must have a Bay leaf tree, and "do your thing." She loves the look and minimal maintenance of Xeriscaping, which can be done in our occasionally-very-wet climate with the right adjustments to plants and structure. We created a flagstone patio area in the back and laced the rest of the yard and gardens with gravel walkways. Gardens take up half of all square footage with tough, drought-tolerant, no-water plants like maiden grasses, a bottlebrush tree, salvia guaranatica, Texas terragon, native palmetto, copper canyon daisies, irises and Moringa trees.' },
+  { slug: 'full-remodel-east-end', title: 'Full Landscape Remodel in East End', img: './land-full-remodel-east-end.jpeg',
+    body: "A small dragon used to park here, eating up the entire front walkway... I slayed it down to a reasonable shrub and trimmed branches on the tall tree next to it up to about 20'. YAY WALKWAY. Yay usefulness of the existing. We swarmed the base and damp shaded fenceline with sandy leaf fig ivy and rain a drain to guide water to street from this beautiful older pier and beam (with slab extension). Note the two-pot-topped chimney. We carpeted beds with Walker's Low catmint, backed by linear fields of wispy high-patience bamboo muhly grasses. Silver mist gravel walkway in front with extra space for Halloween hangs, and a silver mist gravel patio extension in rear for beachy chaises and a chiminea. Preserved ligularias, jasmine, vitex tree. Added artichoke cactus, prunus mume, rosemary, LA irises, and then columnar bottlebrushes for a green privacy screen." },
+  { slug: 'woodland-out-west', title: 'Woodland Out West', img: './land-woodland-out-west.jpeg',
+    tagline: 'Rearranged existing landscape elements with added plants and hardscape',
+    body: "This landscape just needed a lot of rearranging and refreshing, and thankfully we had plenty of moss boulders on site to play with, reorganized as maybe nature would have intended? We also installed a solid, perfectly level and well compacted gravel area for an outdoor dining table. This yard was fully shaded from multiple large trees and tended to hold moisture, so we planted for damp shade, and I think my favorite was the fluorescent glow of the Everillo carex grasses... these would be fun in a moon garden." },
+  { slug: 'handsomeness-heights', title: 'Handsomeness in the Heights', img: './land-handsomeness.jpeg',
+    tagline: 'Full landscape installation designed by landscape architecture firm Falonland Studios',
+    body: "This landscape was designed by Falonland Studios and installed by me and my crews. Some of the features it included was a large Japanese maple (a treasured tree in this family), many perennial grasses set in gravel, thryallis along the house, about six citrus trees in various parts of the yard, vines on trellises, large rain chains, a large garden bed for herbs in the back, a redbud tree as a statement piece outside of a large window, a large patch along the driveway for pollinator friendly perennials, and a pool with a backdrop of multi-trunked wax myrtles." },
+  { slug: 'historic-montrose-remodel', title: 'Historic Montrose Landscape Remodel and Paver Path', img: './land-historic-montrose.jpeg',
+    body: "This 1900's house was so beautiful and well preserved, and it was so cool to be able to do this yard. The client went in with every intention of pollinator habitats at every edge and we accomplished that. She also already had batches of irises from family, stowed to the side in pots and ready to plant. I've never seen healthier irises!! We also preserved the 100+ year old Montrose sidewalk, a bit reddish and busted, still level and walkable, horsepost holes in tact. Ran paver walkways - selection made to tie into old concrete - between front- and porch-side gardens and grass." },
+  { slug: 'museum-cacti-cordia', title: 'Museum Cacti and Cordia Boisierri', img: './land-museum-cacti.jpeg',
+    tagline: 'Full landscape installation designed by landscape architecture firm Falonland Studios',
+    body: "This landscape was designed by Falonland Studios and installed by me and my crews. This neighborhood has some tall yards, and Falon worked with that steep slope of their front yard brilliantly by incorporating two large framed garden beds with stairs in between, and filled them with enough rosemary to support the entire City of Houston in making some fresh rosemary focaccia. The homeowners especially enjoyed when neighbors shared what they made with the rosemary they borrowed. The high ground between the house and back of the raised bed is where the cacti and drought-tolerant plants were set in gravel. A loquat tree was planted by the front door and two stellar cordia trees (Texas olive trees) on the perimeter. The maintenance for this yard included routinely clearing the gravel of volunteers, trimming the ground cover area to keep its shape, and giving the hardy perennials a haircut 1-2/year." }
+];
+
+class Component extends DCLogic {
+  state = { projects: LANDSCAPING_PROJECTS, photoSlotIds: null, bulkOver: false, lightboxUrl: null };
+  _pendingFiles = new Map();
+  _bulkInput = null;
+
+  _slugFromUrl() {
+    return new URLSearchParams(window.location.search).get('slug') || '';
+  }
+
+  _ensureSlotIds(slug) {
+    if (!this.state.photoSlotIds || this._slotSlug !== slug) {
+      this._slotSlug = slug;
+      this.state.photoSlotIds = [1, 2, 3, 4].map(n => `${slug}-p${n}`);
+    }
+    return this.state.photoSlotIds;
+  }
+
+  _dispatchDrop(node, file) {
+    if (!node || !file) return;
+    const dt = new DataTransfer();
+    dt.items.add(file);
+    node.dispatchEvent(new DragEvent('drop', { bubbles: true, cancelable: true, dataTransfer: dt }));
+  }
+
+  _addFiles(files, slug) {
+    const list = Array.from(files || []);
+    if (!list.length) return;
+    const newIds = list.map((_, i) => `${slug}-bulk-${Date.now()}-${i}`);
+    newIds.forEach((id, i) => this._pendingFiles.set(id, list[i]));
+    this.setState(s => ({ photoSlotIds: [...(s.photoSlotIds || []), ...newIds] }));
+  }
+
+  renderVals() {
+    const { projects } = this.state;
+    const slug = this._slugFromUrl();
+    const selfHref = typeof window !== 'undefined' ? (window.location.pathname + window.location.search + window.location.hash) : '';
+    const idx = projects.findIndex(p => p.slug === slug);
+    const project = idx >= 0 ? projects[idx] : (projects[0] || {});
+    const prev = idx > 0 ? projects[idx - 1] : projects[projects.length - 1];
+    const next = idx >= 0 && idx < projects.length - 1 ? projects[idx + 1] : projects[0];
+    const slotIds = this._ensureSlotIds(project.slug || slug || 'project');
+
+    const slotNodes = this._slotNodes || (this._slotNodes = new Map());
+    const makeRef = (id) => (node) => {
+      if (node) slotNodes.set(id, node);
+      if (node && this._pendingFiles.has(id)) {
+        const file = this._pendingFiles.get(id);
+        this._pendingFiles.delete(id);
+        requestAnimationFrame(() => this._dispatchDrop(node, file));
+      }
+    };
+    const openSlotLightbox = (id) => () => {
+      const node = slotNodes.get(id);
+      const img = node && node.shadowRoot && node.shadowRoot.querySelector('.frame img');
+      if (img && img.getAttribute('src')) this.setState({ lightboxUrl: img.src });
+    };
+
+    const uploadedFiles = project.slug === 'museum-cacti-cordia' ? [
+      './55dbbe76-3075-473d-b189-fa6f6cfa35bf_1_1-mskevxi7-77s0.jpeg',
+      './233a1adf-60c5-4aea-92a0-3d56b13f801c_1_1-mskevxhu-tsph.jpeg',
+      './8eb1c379-18f5-4ee6-af3c-5ef2ab549306_1_1-mskevxhx-d6cx.jpeg',
+      './bee9bc2f-a07a-47b7-8cb9-b32cb7b191a8_1_1-mskevxi0-bbx3.jpeg',
+      './11424835-42cb-429c-9d58-4cdbf38b0b07_1_1-mskevxi3-ysth.jpeg'
+    ] : project.slug === 'handsomeness-heights' ? [
+      './49995f1c-86c3-460d-a7ee-683a42affd20_1_1-mskf71oj-twll.jpeg',
+      './8cb609dd-f382-46f1-a4a2-27cfb34f90a4_1_1-mskf71om-ljja.jpeg'
+    ] : [];
+
+    return {
+      project,
+      selfHref,
+      lightboxUrl: this.state.lightboxUrl,
+      openHeroLightbox: () => this.setState({ lightboxUrl: project.img }),
+      closeLightbox: () => this.setState({ lightboxUrl: null }),
+      uploadedPhotos: uploadedFiles.map(src => ({ src, onClick: () => this.setState({ lightboxUrl: src }) })),
+      photoSlots: slotIds.map(id => ({ id, ref: makeRef(id), onClick: openSlotLightbox(id) })),
+      prevHref: prev ? `Project-Landscaping.dc.html?slug=${prev.slug}` : '#',
+      prevTitle: prev ? prev.title : '',
+      nextHref: next ? `Project-Landscaping.dc.html?slug=${next.slug}` : '#',
+      nextTitle: next ? next.title : ''
+    };
+  }
+}
+</script>
+</body>
+</html>

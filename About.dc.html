@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>body{margin:0;background:#1c1420} a{color:#e29bcb} a:hover{color:#f0b8dc}
+    .pf-menu{position:relative}
+    .pf-menu .pf-drop{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;z-index:40}
+    .pf-menu:hover .pf-drop,.pf-menu:focus-within .pf-drop{display:block}
+    .pf-drop-inner{background:#241b2b;border:1px solid rgba(246,238,248,0.12);border-radius:14px;padding:8px;min-width:230px;box-shadow:0 14px 40px rgba(0,0,0,0.45);display:flex;flex-direction:column}
+    .pf-drop-inner a{display:block;padding:9px 14px;border-radius:9px;text-decoration:none;color:#f6eef8;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap}
+    .pf-drop-inner a:hover{background:rgba(226,155,203,0.16);color:#f0b8dc}
+  </style>
+</helmet>
+<div style="background:#1c1420;color:#f6eef8;min-height:100vh;font-family:'Work Sans',sans-serif">
+
+  <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+    <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:27px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
+    <div style="display:flex;align-items:center;gap:28px">
+      <a href="About.dc.html" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">About</a>
+      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="BehindTheBuild.dc.html" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Behind the Build</a>
+      <a href="HowTos.dc.html" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">How To's</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+    </div>
+  </nav>
+
+  <section style="position:relative;overflow:hidden;padding:100px clamp(20px,5vw,72px) 72px">
+    <div style="position:absolute;top:-140px;right:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(226,155,203,0.35),transparent 70%);filter:blur(10px);pointer-events:none"></div>
+    <div style="max-width:1100px;margin:0 auto;position:relative;display:grid;grid-template-columns:minmax(280px,430px) 1fr;gap:48px;align-items:start">
+      <div style="display:grid;gap:28px">
+        <img src="about-hero.webp" alt="Haskins Design &amp; Build" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:20px;display:block" />
+        <figure style="margin:0">
+          <img src="about-patiovore-popup.png" alt="Jessie Haskins at the Sustainable Living Fest with Patiovore Popup garden kits" style="width:100%;border-radius:20px;display:block" />
+          <figcaption style="margin:12px 0 0;font-size:13px;line-height:1.5;color:rgba(246,238,248,0.6)">The Patiovore Popup was a <a href="https://houston.culturemap.com/news/restaurants-bars/03-20-13-produce-game-changer-pop-up-patio-gardens-aim-to-let-any-urban-dweller-grow-their-own-vegetables">ready-made veggie garden kit</a> that I sold in my first year of business before moving to fully custom installations.</figcaption>
+        </figure>
+      </div>
+      <div>
+        <h1 style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:clamp(30px,4.4vw,50px);line-height:1.15;margin:0 0 24px">About</h1>
+        <div style="display:grid;gap:18px;font-size:16px;line-height:1.75;color:rgba(246,238,248,0.78);max-width:64ch">
+          <p style="margin:0">Hi, I'm Jessie Haskins, and in 2012 I started a small garden and realized it was multiple types of therapy in one activity. This turned into an obsession which then turned into a profession.</p>
+          <p style="margin:0">My first year of business in 2012 was full of veggie garden installations for friends and family. It was also full with Urban Harvest's Permaculture classes, other gardening classes, and books, and really any info I could get my hands on.</p>
+          <p style="margin:0">I practiced my craft by destroying my parent's once-perfect suburban lawn to learn homesteading and edible landscaping. My brother David and I built out over 1,000 sf of garden beds, planted multiple fruit trees, built out a perfect coop and run for 20+ chickens, and installed a 2,000 gallon rain tank with the help of our friends.</p>
+          <p style="margin:0">In 2013, I was hired to install a completely edible and native landscape for a new construction home on a double lot in the Heights. We installed all garden beds, walkways, a 1,300 sf radial stone patio around the pool and fire pit, a whole-yard irrigation system with a smart controller to sync with local weather data and run off of their rainwater catchment system, a large rain garden, etc.</p>
+          <p style="margin:0">I've designed and built landscapes ever since and as sustainably as possible, with thoughtful plant selection and installation methods that will hold up in our somewhat dramatic but very special climate. I like to identify each unique micro-ecosystem in a yard and make the most of each area's natural resources. I want to create pollinator AND people habitats in a way that minimizes waste, as well as the need for maintenance and supplemental water. Each landscape installation is an opportunity to revive one patch of earth, and though I can't make any promises because nature is full of surprises, my landscapes often have healthier soil in the years that follow our installations.</p>
+          <p style="margin:0">I run this business with the help of various subcontractors and crews, which vary based on the job at hand. I've also personally worked almost every kind of landscape labor enough to embed the HOW and WHY deep in my system, but I'm grateful to have done my best work with the love, support, and sweat of others.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 72px">
+    <img src="uploads/Screenshot 2026-08-12 at 9.54.21 AM.png" alt="Crew setting pavers on a Haskins Design &amp; Build install" style="width:100%;display:block;border-radius:20px" />
+  </section>
+
+  <section style="max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 96px">
+    <div style="border-top:1.5px solid rgba(246,238,248,0.1);padding-top:40px">
+      <span style="display:block;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#c9a9d6;font-weight:600;margin-bottom:20px">Press</span>
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(200px,300px);gap:32px;align-items:start">
+        <div style="display:grid;gap:16px;font-size:16px;line-height:1.75;color:rgba(246,238,248,0.72)">
+        <p style="margin:0">We got some attention in the earliest days of Patiovore that is worth mentioning!</p>
+        <p style="margin:0">Patiovore's conception started with ready-made veggie garden kits that included a bed frame, bagged soil, local fertilizer, seeds, and a booklet of instructions. It was a really fun idea, but we quickly learned that customizing garden beds to our client's yard was more in demand than pre-made garden kits. Regardless, here's some fun press we received on the kits: <a href="#">Produce game changer: Pop-up patio gardens aim to let urban dwellers grow their own vegetables</a>.</p>
+        <p style="margin:0">One full year into business when we started our largest project at the Heights home mentioned above, we ended up on the news! This was a video years ago but has been archived as an article: <a href="#">Gardening Hacks for Spring Success</a>.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <image-slot id="about-side-1" shape="rounded" radius="12" style="width:100%;aspect-ratio:1/1" placeholder="Photo"></image-slot>
+          <image-slot id="about-side-2" shape="rounded" radius="12" style="width:100%;aspect-ratio:1/1" placeholder="Photo"></image-slot>
+          <image-slot id="about-side-3" shape="rounded" radius="12" style="width:100%;aspect-ratio:1/1" placeholder="Photo"></image-slot>
+          <image-slot id="about-side-4" shape="rounded" radius="12" style="width:100%;aspect-ratio:1/1" placeholder="Photo"></image-slot>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:28px">
+        <image-slot id="about-grid-1" shape="rounded" radius="12" style="width:100%;aspect-ratio:4/3" placeholder="Photo"></image-slot>
+        <image-slot id="about-grid-2" shape="rounded" radius="12" style="width:100%;aspect-ratio:4/3" placeholder="Photo"></image-slot>
+        <image-slot id="about-grid-3" shape="rounded" radius="12" style="width:100%;aspect-ratio:4/3" placeholder="Photo"></image-slot>
+        <image-slot id="about-grid-4" shape="rounded" radius="12" style="width:100%;aspect-ratio:4/3" placeholder="Photo"></image-slot>
+        <image-slot id="about-grid-5" shape="rounded" radius="12" style="width:100%;aspect-ratio:4/3" placeholder="Photo"></image-slot>
+        <image-slot id="about-grid-6" shape="rounded" radius="12" style="width:100%;aspect-ratio:4/3" placeholder="Photo"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+    <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:27px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
+    <div style="display:flex;align-items:center;gap:28px">
+      <a href="About.dc.html" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">About</a>
+      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="BehindTheBuild.dc.html" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Behind the Build</a>
+      <a href="HowTos.dc.html" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">How To's</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+    </div>
+  </nav>
+
+  <div style="max-width:1200px;margin:0 auto;padding:24px clamp(20px,5vw,72px);font-size:13px;color:rgba(246,238,248,0.45)">Haskins Design &amp; Build</div>
+</div>
+</x-dc>
+</body>
+</html>

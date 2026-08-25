@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>body{margin:0;background:#1c1420} a{color:#e29bcb} a:hover{color:#f0b8dc}</style>
+</helmet>
+<div style="background:#1c1420;color:#f6eef8;min-height:100vh;font-family:'Work Sans',sans-serif">
+
+  <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+    <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:27px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
+    <div style="display:flex;align-items:center;gap:24px">
+      <a href="About.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">About</a>
+      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="BehindTheBuild.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Behind the Build</a>
+      <a href="HowTos.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">How To's</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+    </div>
+  </nav>
+
+  <section style="position:relative;overflow:hidden;padding:120px clamp(20px,5vw,72px)">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(28,20,32,0.4),rgba(28,20,32,0.6)),url('uploads/pasted-1786128615389-0.png');background-size:cover;background-position:center"></div>
+    <div style="max-width:1100px;margin:0 auto;position:relative">
+      <h1 style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:clamp(32px,4.6vw,52px);line-height:1.1;margin:0 0 20px">Contact</h1>
+      <a href="{{ mailHref }}" style="display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;background:#e29bcb;color:#1c1420;text-decoration:none;font-weight:700;font-size:16px;letter-spacing:0.01em">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <span>{{ mailLabel }}</span>
+      </a>
+    </div>
+  </section>
+
+  <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+    <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:27px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
+    <div style="display:flex;align-items:center;gap:24px">
+      <a href="About.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">About</a>
+      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="BehindTheBuild.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Behind the Build</a>
+      <a href="HowTos.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">How To's</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+    </div>
+  </nav>
+
+  <div style="max-width:1100px;margin:0 auto;padding:24px clamp(20px,5vw,72px);font-size:13px;color:rgba(246,238,248,0.45)">Haskins Design &amp; Build</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    // Assembled at runtime so the address never appears as plain text in the HTML source.
+    const u = ['jessie', 'haskinsdesignbuild', 'com'];
+    const addr = u[0] + String.fromCharCode(64) + u[1] + '.' + u[2];
+    return { mailHref: 'mai' + 'lto:' + addr, mailLabel: addr };
+  }
+}
+</script>
+</body>
+</html>

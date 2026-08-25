@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>body{margin:0;background:#1c1420} a{color:#e29bcb} a:hover{color:#f0b8dc}
+    .pf-menu{position:relative}
+    .pf-menu .pf-drop{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;z-index:40}
+    .pf-menu:hover .pf-drop,.pf-menu:focus-within .pf-drop{display:block}
+    .pf-drop-inner{background:#241b2b;border:1px solid rgba(246,238,248,0.12);border-radius:14px;padding:8px;min-width:230px;box-shadow:0 14px 40px rgba(0,0,0,0.45);display:flex;flex-direction:column}
+    .pf-drop-inner a{display:block;padding:9px 14px;border-radius:9px;text-decoration:none;color:#f6eef8;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap}
+    .pf-drop-inner a:hover{background:rgba(226,155,203,0.16);color:#f0b8dc}
+  </style>
+</helmet>
+<div style="background:#1c1420;color:#f6eef8;min-height:100vh;font-family:'Work Sans',sans-serif">
+  <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+    <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:27px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
+    <div style="display:flex;align-items:center;gap:24px">
+      <a href="About.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">About</a>
+      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="BehindTheBuild.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Behind the Build</a>
+      <a href="HowTos.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">How To's</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+    </div>
+  </nav>
+
+  <section style="position:relative;overflow:visible;padding:110px clamp(20px,5vw,72px) 84px">
+    <div style="position:absolute;top:-140px;right:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(226,155,203,0.35),transparent 70%);filter:blur(10px);pointer-events:none"></div>
+    <div style="position:absolute;bottom:-180px;left:-120px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(167,154,209,0.3),transparent 70%);filter:blur(10px);pointer-events:none"></div>
+    <div style="max-width:1200px;margin:0 auto;position:relative;display:grid;grid-template-columns:minmax(200px,260px) 1fr;gap:56px;align-items:start">
+      <div>
+        <h1 style="font-family:'Poppins',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.01em;font-size:clamp(27px,3.3vw,39px);line-height:1.18;margin:0;padding-top:34px">A native<br>and<br>ecological<br>approach<br>to<br><span style="color:#e29bcb">Houston, TX</span><br>landscapes</h1>
+      </div>
+      <div>
+        <p style="font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 14px;color:rgba(246,238,248,0.85)">Our goals are, in no particular order:</p>
+        <ul style="margin:0;padding:0 0 0 18px;font-size:16px;line-height:1.45;color:rgba(246,238,248,0.68);column-count:2;column-gap:40px">
+          <li style="break-inside:avoid;margin-bottom:6px">Native plants, as many as possible, with permission for others that are well-adapted, supportive of life, or simply joyful plants (that are neither bullies nor invasive)</li>
+          <li style="break-inside:avoid;margin-bottom:6px">To find where modern needs are served with respect to natural patterns</li>
+          <li style="break-inside:avoid;margin-bottom:6px">Inner and outer biome health</li>
+          <li style="break-inside:avoid;margin-bottom:6px">Biodiversity and more support for pollinators, birds, and wildlife</li>
+          <li style="break-inside:avoid;margin-bottom:6px">More butterflies, more access to the magic that is naturally available to us</li>
+          <li style="break-inside:avoid;margin-bottom:6px">Working with the environment instead of against it</li>
+          <li style="break-inside:avoid;margin-bottom:6px">Designing to avoid chemical use</li>
+          <li style="break-inside:avoid;margin-bottom:6px">Designing for more ease, less maintenance, and minimal resource usage</li>
+          <li style="break-inside:avoid;margin-bottom:6px">To generate more joy in our immediate environments</li>
+          <li style="break-inside:avoid;margin-bottom:6px">To enjoy collaborating with all types of uniquely brilliant folks, and lastly,</li>
+          <li style="break-inside:avoid;margin-bottom:6px">To minimize waste in every step of the process.</li>
+        </ul>
+      </div>
+    </div>
+    <div style="position:absolute;right:calc(clamp(20px,5vw,72px) - 32px);bottom:-32px;transform:translateY(15%);width:230px;height:230px;pointer-events:none;z-index:1;display:flex;align-items:center;justify-content:center">
+      <div style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle, rgba(226,155,203,0.35) 0%, rgba(167,154,209,0.22) 45%, transparent 72%)"></div>
+      <img src="uploads/Screenshot 2026-08-07 at 3.00.24 PM.png" alt="Haskins Design &amp; Build butterfly mark" style="position:relative;height:165px;width:auto;z-index:2;pointer-events:none" />
+    </div>
+  </section>
+
+
+  <section style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 96px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:32px">
+      <sc-for list="{{ projects }}" as="p" hint-placeholder-count="13">
+        <a href="{{ p.href }}" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#271e2e;border:1px solid rgba(246,238,248,0.08);border-radius:20px;overflow:hidden">
+          <sc-if value="{{ p.img }}" hint-placeholder-val="{{ false }}">
+            <img src="{{ p.img }}" alt="{{ p.title }}" style="{{ p.imgStyle }}" />
+          </sc-if>
+          <sc-if value="{{ p.noImg }}" hint-placeholder-val="{{ false }}">
+            <image-slot id="{{ p.slotId }}" shape="rounded" radius="0" style="width:100%;aspect-ratio:4/3" placeholder="Add a photo"></image-slot>
+          </sc-if>
+          <div style="padding:20px">
+            <h2 style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:17px;margin:0 0 10px">{{ p.title }}</h2>
+            <p style="font-size:14px;line-height:1.6;margin:0 0 14px;color:rgba(246,238,248,0.68)">{{ p.excerpt }}</p>
+            <span style="color:#e29bcb;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:6px">See more &amp; photos<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 72px;border-top:1.5px solid rgba(246,238,248,0.1);padding-top:32px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <a href="Category-RainwaterCatchment.dc.html" style="text-decoration:none;color:#f6eef8;display:flex;align-items:center;gap:10px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      <span><span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:rgba(246,238,248,0.45)">Previous</span>Rainwater Catchment</span>
+    </a>
+    <a href="Category-Hardscaping.dc.html" style="text-decoration:none;color:#f6eef8;display:flex;align-items:center;gap:10px;text-align:right">
+      <span><span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:rgba(246,238,248,0.45)">Next</span>Hardscaping</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </a>
+  </section>
+
+  <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+    <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:27px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
+    <div style="display:flex;align-items:center;gap:24px">
+      <a href="About.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">About</a>
+      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="BehindTheBuild.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Behind the Build</a>
+      <a href="HowTos.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">How To's</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+    </div>
+  </nav>
+
+  <div style="max-width:1200px;margin:0 auto;padding:24px clamp(20px,5vw,72px);font-size:13px;color:rgba(246,238,248,0.45)">Haskins Design &amp; Build</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+function excerpt50(text) {
+  if (!text) return '';
+  const words = text.trim().split(/\s+/);
+  return words.length <= 50 ? text : words.slice(0, 50).join(' ') + '…';
+}
+
+class Component extends DCLogic {
+  renderVals() {
+    const projects = [
+      { slug: 'east-end-wildscape', title: 'East End Wildscape', img: './land-east-end-wildscape.jpeg', tall: true,
+        tagline: 'Replaced 70% of lawn with structured landscape, new front deck, rear awning, driveway rebuild, surface drainage',
+        body: "I've loved all of my projects for their own reasons and I hate to play favorites, but this one is hard to beat. It's also my most recent completion, so maybe my work is aging like a good wine and each project is more lovable than the last. If only I could enjoy the wine - this type of work is fraught with all kinds of interesting emotions that I may need years of therapy to process. Large flagstone walkways, many baby native trees planted, short retention walls, frog fruit ground cover, tons of native bad hair day plants - mist flower, prairie aster, muhly, turk's cap, the usual." },
+      { slug: 'backyard-arboretum-meyerland', title: 'Backyard Arboretum in Meyerland', img: './land-backyard-arboretum.jpeg', tall: true,
+        body: "OK, see, how does one play favorites? These lovely clients wanted a yard full of natives planted however I felt was best and the results were perfect. After this installation, Houston was hit by one big weather event after another and this yard continued to thrive in all the best ways. Mist flower, wine cup, crag lily, prairie aster, rock rose, muhly, salvias and sages, flame acanthus, etc etc. A handful of not-so-natives that were planted in perfectly contained areas where they could also, without threat of bullying the others, bring joy." },
+      { slug: 'bellaire-xeriscape', title: 'Bellaire Xeriscape', img: './land-bellaire-xeriscape.jpeg',
+        tagline: 'Complete landscape overhaul with minimal turf areas and irrigation-free gardens',
+        body: 'Xeriscape is kind of a naughty word in Houston. I don\'t entirely want to be asked for this type of landscape with how much rain we get here but there IS A WAY IT CAN BE DONE but it is NOT THE XERO MAINTENANCE you think it might be. I overheard someone at a party say, "I\'m so tired of mowing, I want to replace our lawn with gravel!" Nature is abundant and will grow grow grow here unless we really fully scorch the earth (if you want a lesson in abundance, start gardening in Houston) - so if you\'d like to trade your mowing for using enough chemicals to risk altering the hormones and overall health of you, your family, and your immediate environment OR want to spend time pulling the many volunteers that will show up by their roots (landscape fabric doesn\'t stop the birds from gardening and it traps roots of weeds so they can just keep re-sprouting), then go for it. Grading is critical in xeriscaping. Garden areas with cacti need to be BUILT UP so they stay high and dry. Soil needs to be on the sandy side. Surround them with arid-friendly plants like rock rose, guara, zexmenia, tall grasses, etc. When building up certain areas, drainage and runoff still needs to be accounted for and ideally managed within the landscape (without adding runoff to the neighbor\'s yard). If the neighbors have grass on the other side of your shared fence, you can bet on it migrating over into your gravel spaces, so in this case I planted ground cover as a border along the fence. The homeowner wasn\'t a fan of the ground cover - it was aggressive enough to be a strong natural border between the xeriscape and the neighbor\'s lawns, but it was usurping gravel areas enough to grow over the "xeri" in xeriscape. Once I pulled it, the volunteers/weeds rushed in. This is where the negotiation comes in to making a xeriscape-like yard in Houston. It\'s really hard to have bare earth in Houston as she wants to grow out of every spare inch (again, a blessing, if we know how to work with it), so we kind of choose our plants in Houston or they choose us. In planted areas where there is soil under just a bit of gravel, we need fully planted areas. We need to out-compete with chosen plants or we\'ll be fighting the weeds until the earth gives up and when that happens... I don\'t know, that\'s kind of a sad day because it also makes life harder for your intentional plants nearby. There were designated gravel areas that were given a well compacted 2"+ crushed concrete base layer, and the planted areas were about 1" of crushed granite gravel over soil. It was hot shortly after our installation in the summer of 2020, and the big freeze hit Houston the following winter and the roots of most plants survived, so I don\'t hate crushed granite gravel as mulch. It actually seemed to be a decent insulator. There\'s a whole lot more to this but all that said, I got to see it through many beautiful seasons of maturity. These clients were truly wonderful and I\'m grateful for the journey we got to take with their yard.' },
+      { slug: 'west-university-gardens', title: 'West University Gardens', img: './land-west-university.webp',
+        tagline: 'Landscape refresh, raised steel planter beds for veggie gardens in the front yard, pollinator gardens',
+        body: "These aren't my artichokes, but artichokes are my favorite flowers second only to seeing prairie aster in the wild, and are they an ancient gift from aliens? They're wild. These wonderful clients have for many cycles now taken an active role in these garden beds and every single iteration of clients experimenting in their yard makes me melt. Love to see it. In this yard, in summary, we made the most of an existing landscape design by reviving ground cover, supporting a stand of old existing cherry laurels, adding and replacing trees, and filling out the gardens. Favorite native trees planted here: an Anacua Sandpaper tree and Nuttall Oak. Existing Fringe tree is a repeat showstopper." },
+      { slug: 'urban-homestead-heights', title: 'Urban Homestead in Houston Heights', img: './land-urban-homestead.webp',
+        tagline: 'Gravel driveway, veggie gardens, fruit trees, rain catchment system, repurposed carport into shed, pollinator gardens, two pergolas, large deck with built in beds, paver patio' },
+      { slug: 'meyerland-landscape-remodel', title: 'Meyerland Landscape Remodel', img: './land-meyerland-remodel.jpeg',
+        tagline: 'Landscape remodel, rainwater-based smart irrigation system, gravel pad for playset, drainage improvements',
+        body: "This yard was a minimal design by the brilliant landscape architect of Falonland Studios. The homeowners also opted for a rainwater-based irrigation system with a 1,200g tank by Metal Rain Tanks. We installed a submersible well pump to run a full-yard irrigation system with drip lines in the beds and highly efficient MP rotator spray heads on the lawn. We installed a Wi-Fi enabled Rachio smart controller that syncs with local weather data to only turn on during long stretches without rain. The tank has an easy-access spigot for hand-watering and emergency use. For the twin boys' new playset, we installed an 18' x 20' x 12\" deep pea-gravel pad, double-lined with fabric at the base with staked poly lawn edging at the perimeter to keep grass at bay." },
+      { slug: 'leed-new-construction-heights', title: 'Complete Landscape Installation, L.E.E.D. New Construction in the Heights', img: './land-leed-heights.jpeg',
+        tagline: 'Complete landscape installation, rainwater-based irrigation, hardscaping and rain garden',
+        body: "The layout for this yard was designed by the impressive landscape architecture firm Asakura Robinson while the plant and hardscaping material selections were left to us, the homeowners and their designer. We weren't in charge of the rainwater catchment system installation here, but we installed an efficient irrigation system to run the water with a Wi-Fi-enabled Hydrawise smart controller that would sync with local weather data and was easy to control from an iPhone/Android app. We installed a large rain garden in the front yard to help excess rainfall percolate faster in an area of the street that was low and had no drainage ditch in place. I drove by many times over the following years and although the area still puddled, it was nothing like the pooling we saw all during the construction process. I have no official metrics but I'm pretty dang sure the thing worked! We also installed a 1,300 sf Texas limestone patio in a radial, sun-burst pattern around the round pool and fire pit. We installed gravel and paver walkways all around the house." },
+      { slug: 'montrose-new-construction', title: 'Montrose Landscape Design & Build - New Construction', img: './land-montrose-new-construction.jpeg',
+        tagline: 'Landscape design & build, rainwater catchment system, permeable paver driveway',
+        body: 'The homeowner of this project insisted on very few things: no grass, must have a Bay leaf tree, and "do your thing." She loves the look and minimal maintenance of Xeriscaping, which can be done in our occasionally-very-wet climate with the right adjustments to plants and structure. We created a flagstone patio area in the back and laced the rest of the yard and gardens with gravel walkways. Gardens take up half of all square footage with tough, drought-tolerant, no-water plants like maiden grasses, a bottlebrush tree, salvia guaranatica, Texas terragon, native palmetto, copper canyon daisies, irises and Moringa trees.' },
+      { slug: 'full-remodel-east-end', title: 'Full Landscape Remodel in East End', img: './land-full-remodel-east-end.jpeg',
+        body: "A small dragon used to park here, eating up the entire front walkway... I slayed it down to a reasonable shrub and trimmed branches on the tall tree next to it up to about 20'. YAY WALKWAY. Yay usefulness of the existing. We swarmed the base and damp shaded fenceline with sandy leaf fig ivy and rain a drain to guide water to street from this beautiful older pier and beam (with slab extension). Note the two-pot-topped chimney. We carpeted beds with Walker's Low catmint, backed by linear fields of wispy high-patience bamboo muhly grasses. Silver mist gravel walkway in front with extra space for Halloween hangs, and a silver mist gravel patio extension in rear for beachy chaises and a chiminea. Preserved ligularias, jasmine, vitex tree. Added artichoke cactus, prunus mume, rosemary, LA irises, and then columnar bottlebrushes for a green privacy screen." },
+      { slug: 'woodland-out-west', title: 'Woodland Out West', img: './land-woodland-out-west.jpeg', tall: true,
+        tagline: 'Rearranged existing landscape elements with added plants and hardscape',
+        body: "This landscape just needed a lot of rearranging and refreshing, and thankfully we had plenty of moss boulders on site to play with, reorganized as maybe nature would have intended? We also installed a solid, perfectly level and well compacted gravel area for an outdoor dining table. This yard was fully shaded from multiple large trees and tended to hold moisture, so we planted for damp shade, and I think my favorite was the fluorescent glow of the Everillo carex grasses... these would be fun in a moon garden." },
+      { slug: 'handsomeness-heights', title: 'Handsomeness in the Heights', img: './land-handsomeness.jpeg',
+        tagline: 'Full landscape installation designed by landscape architecture firm Falonland Studios',
+        body: "This landscape was designed by Falonland Studios and installed by me and my crews. Some of the features it included was a large Japanese maple (a treasured tree in this family), many perennial grasses set in gravel, thryallis along the house, about six citrus trees in various parts of the yard, vines on trellises, large rain chains, a large garden bed for herbs in the back, a redbud tree as a statement piece outside of a large window, a large patch along the driveway for pollinator friendly perennials, and a pool with a backdrop of multi-trunked wax myrtles." },
+      { slug: 'historic-montrose-remodel', title: 'Historic Montrose Landscape Remodel and Paver Path', img: './land-historic-montrose.jpeg',
+        body: "This 1900's house was so beautiful and well preserved, and it was so cool to be able to do this yard. The client went in with every intention of pollinator habitats at every edge and we accomplished that. She also already had batches of irises from family, stowed to the side in pots and ready to plant. I've never seen healthier irises!! We also preserved the 100+ year old Montrose sidewalk, a bit reddish and busted, still level and walkable, horsepost holes in tact. Ran paver walkways - selection made to tie into old concrete - between front- and porch-side gardens and grass." },
+      { slug: 'museum-cacti-cordia', title: 'Museum Cacti and Cordia Boisierri', img: './land-museum-cacti.jpeg',
+        tagline: 'Full landscape installation designed by landscape architecture firm Falonland Studios',
+        body: "This landscape was designed by Falonland Studios and installed by me and my crews. This neighborhood has some tall yards, and Falon worked with that steep slope of their front yard brilliantly by incorporating two large framed garden beds with stairs in between, and filled them with enough rosemary to support the entire City of Houston in making some fresh rosemary focaccia. The homeowners especially enjoyed when neighbors shared what they made with the rosemary they borrowed. The high ground between the house and back of the raised bed is where the cacti and drought-tolerant plants were set in gravel. A loquat tree was planted by the front door and two stellar cordia trees (Texas olive trees) on the perimeter. The maintenance for this yard included routinely clearing the gravel of volunteers, trimming the ground cover area to keep its shape, and giving the hardy perennials a haircut 1-2/year." }
+    ];
+    return { projects: projects.map(p => ({ ...p, slotId: `landscaping-${p.slug}-photo`, imgStyle: `width:100%;aspect-ratio:${p.tall ? '3/4' : '4/3'};object-fit:cover;display:block`, excerpt: excerpt50(p.body || p.tagline), href: `Project-Landscaping.dc.html?slug=${p.slug}` })) };
+  }
+}
+</script>
+</body>
+</html>

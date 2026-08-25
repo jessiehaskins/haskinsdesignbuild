@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>body{margin:0;background:#1c1420} a{color:#e29bcb} a:hover{color:#f0b8dc}
+    .pf-menu{position:relative}
+    .pf-menu .pf-drop{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;z-index:40}
+    .pf-menu:hover .pf-drop,.pf-menu:focus-within .pf-drop{display:block}
+    .pf-drop-inner{background:#241b2b;border:1px solid rgba(246,238,248,0.12);border-radius:14px;padding:8px;min-width:230px;box-shadow:0 14px 40px rgba(0,0,0,0.45);display:flex;flex-direction:column}
+    .pf-drop-inner a{display:block;padding:9px 14px;border-radius:9px;text-decoration:none;color:#f6eef8;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap}
+    .pf-drop-inner a:hover{background:rgba(226,155,203,0.16);color:#f0b8dc}
+  </style>
+</helmet>
+<div style="background:#1c1420;color:#f6eef8;min-height:100vh;font-family:'Work Sans',sans-serif">
+  <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+    <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:27px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
+    <div style="display:flex;align-items:center;gap:24px">
+      <a href="About.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">About</a>
+      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="BehindTheBuild.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Behind the Build</a>
+      <a href="HowTos.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">How To's</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+    </div>
+  </nav>
+
+  <section style="max-width:1200px;margin:0 auto;padding:72px clamp(20px,5vw,72px) 40px">
+    <h1 style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:clamp(30px,4.4vw,50px);line-height:1.15;margin:0 0 20px">Cowboy Pools</h1>
+    <p style="font-size:16px;line-height:1.75;max-width:68ch;margin:0;color:rgba(246,238,248,0.78)">In February of 2023, I was hired to open a Houston location for my friends at Cowboy Pools in Austin. I get to see a lot of Cowboy Pool installations with this job now and have genuinely fallen in love with this product. Not only are they cute, they're a very practical and economical alternative to a whole in-ground pool. I'm grateful to get to install with the methods and materials honed over 4+ years of the busy Austin shop perfecting the craft - the way we build them out continues to stand the test of time. They're surprisingly easy to maintain, too. 10/10 would install again. Here are some of my favorites, and I did not install any of the landscapes surrounding them. If you're interested in more info, <a href="https://cowboypools.com" target="_blank" rel="noopener">check out their website at cowboypools.com</a>.</p>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 96px">
+    <div style="column-count:3;column-gap:16px">
+      <sc-for list="{{ photos }}" as="photo" hint-placeholder-count="16">
+        <sc-if value="{{ photo.url }}" hint-placeholder-val="{{ false }}">
+          <img src="{{ photo.url }}" alt="Cowboy Pools installation" style="width:100%;border-radius:16px;display:block;margin-bottom:16px;break-inside:avoid" />
+        </sc-if>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 72px;border-top:1.5px solid rgba(246,238,248,0.1);padding-top:32px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <a href="Category-Hardscaping.dc.html" style="text-decoration:none;color:#f6eef8;display:flex;align-items:center;gap:10px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      <span><span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:rgba(246,238,248,0.45)">Previous</span>Hardscaping</span>
+    </a>
+    <a href="Category-Campervan.dc.html" style="text-decoration:none;color:#f6eef8;display:flex;align-items:center;gap:10px;text-align:right">
+      <span><span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:rgba(246,238,248,0.45)">Next</span>Campervan</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </a>
+  </section>
+
+  <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+    <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:27px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
+    <div style="display:flex;align-items:center;gap:24px">
+      <a href="About.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">About</a>
+      <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="BehindTheBuild.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Behind the Build</a>
+      <a href="HowTos.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">How To's</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+    </div>
+  </nav>
+  <div style="max-width:1200px;margin:0 auto;padding:24px clamp(20px,5vw,72px);font-size:13px;color:rgba(246,238,248,0.45)">Haskins Design &amp; Build</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  photos = [
+    './cp-01.webp',
+    './cp-02.webp',
+    './cp-04.webp',
+    './cp-05.webp',
+    './cp-06.webp',
+    './cp-07.webp',
+    './cp-08.webp',
+    './cp-09.webp',
+    './cp-10.webp',
+    './cp-11.webp',
+    './cp-12.webp',
+    './cp-13.webp',
+    './cp-14.webp',
+    './cp-15.webp',
+    './cp-16.webp'
+  ];
+  renderVals() {
+    return { photos: this.photos.map(url => ({ url })) };
+  }
+}
+</script>
+</body>
+</html>
