@@ -23,9 +23,9 @@
       nav>div{flex-wrap:wrap !important;gap:14px 18px !important}
       nav>a:first-child{width:100%;display:block}
       nav span{font-size:7.1vw !important;letter-spacing:0 !important;white-space:nowrap;display:block;text-align:left}
-      nav>div{width:100%;height:150px;display:grid !important;grid-template-columns:1fr auto;column-gap:14px;row-gap:0 !important;align-items:center;align-content:space-between}
-      nav>div>a{grid-column:1}
-      nav>div>a[href="Contact.dc.html"]{grid-column:2;grid-row:1 / span 5;justify-self:end;align-self:stretch;writing-mode:vertical-rl;padding:0 10px !important;justify-content:center}
+      nav>div{width:100%;height:150px;display:grid !important;grid-template-columns:1fr auto;column-gap:14px;row-gap:4px !important;align-items:end;align-content:end}
+      nav>div>a{grid-column:1;font-size:19px !important;line-height:1.15}
+      nav>div>a[href="Contact.dc.html"]{grid-column:2;grid-row:1 / span 5;justify-self:end;align-self:stretch;writing-mode:vertical-rl;padding:0 10px !important;justify-content:center;font-size:13px !important;letter-spacing:0.06em}
       /* two-column text/image layouts -> stack */
       [style*="minmax(200px"],[style*="minmax(280px"],[style*="minmax(300px"],[style*="minmax(260px, 1fr)"]{grid-template-columns:minmax(0,1fr) !important;gap:28px !important}
       /* fixed 5/6-track mosaics -> single column, drop pinning */
@@ -40,8 +40,12 @@
       a[style*="calc("]{width:100% !important}
       h1{font-size:clamp(24px,7vw,34px) !important}
       section{padding-top:28px !important}
-      div:has(>img[alt*="butterfly"]){display:flex !important;right:8px !important;bottom:auto !important;top:-96px !important;transform:none !important;width:150px !important;height:150px !important;z-index:6 !important}
-      div:has(>img[alt*="butterfly"]) img{height:120px !important}
+      section[style*="84px"]{padding-top:8px !important;padding-bottom:16px !important}
+      nav{display:grid !important;grid-template-columns:auto 1fr;column-gap:16px;align-items:start}
+      nav>a:first-child{grid-column:1 / -1}
+      .mobile-butterfly{display:block !important;grid-column:1;grid-row:2;height:150px;width:auto;pointer-events:none}
+      nav>div{grid-column:2;grid-row:2}
+      div:has(>img[alt*="butterfly"]){display:none !important}
     }
     @media (max-width:520px){
       [style*="auto-fill"]{grid-template-columns:minmax(0,1fr) !important}
@@ -59,7 +63,7 @@
   </style>
 </helmet>
 <div style="background:#1c1420;color:#f6eef8;min-height:100vh;font-family:'Work Sans',sans-serif">
-  <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+  <nav style="position:relative;background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
     <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:35px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
     <div style="display:flex;align-items:center;gap:24px">
       <a href="About.dc.html" style="text-decoration:none;color:#3b2540;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:0.04em">About</a>
@@ -68,7 +72,8 @@
       <a href="Resources.dc.html" style="text-decoration:none;color:#3b2540;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:0.04em">Resources</a>
       <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#e29bcb;text-decoration:none;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
     </div>
-  </nav>
+      <img src="butterfly-mark.png" alt="Haskins Design &amp; Build butterfly mark" class="mobile-butterfly" style="display:none" />
+</nav>
 
   <section style="position:relative;overflow:visible;z-index:3;padding:110px clamp(20px,5vw,72px) 84px">
     <div style="position:absolute;top:-140px;right:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(226,155,203,0.35),transparent 70%);filter:blur(10px);pointer-events:none"></div>
