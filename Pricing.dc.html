@@ -20,7 +20,10 @@
     @media (max-width:820px){
       nav{padding:16px clamp(16px,4vw,24px) !important;gap:12px !important}
       nav>div{flex-wrap:wrap !important;gap:14px 18px !important}
-      nav span{font-size:20px !important}
+      nav>a:first-child{width:100%;display:block}
+      nav span{font-size:8.4vw !important;white-space:nowrap;display:block;text-align:left}
+      nav>div{width:100%;justify-content:flex-start !important}
+      nav>div>a[href="Contact.dc.html"]{margin-left:auto}
       /* two-column text/image layouts -> stack */
       [style*="minmax(200px"],[style*="minmax(280px"],[style*="minmax(300px"],[style*="minmax(260px, 1fr)"]{grid-template-columns:minmax(0,1fr) !important;gap:28px !important}
       /* fixed 5/6-track mosaics -> single column, drop pinning */
