@@ -15,6 +15,38 @@
     body{margin:0;background:#1c1420}
     a{color:#e29bcb}
     a:hover{color:#f0b8dc}
+    /* mobile viewport guards */
+    html,body{max-width:100%;overflow-x:hidden}
+    *{min-width:0}
+    img,video,image-slot{max-width:100%}
+
+    /* mobile */
+    @media (max-width:820px){
+      nav{padding:16px clamp(16px,4vw,24px) !important;gap:12px !important}
+      nav>div{flex-wrap:wrap !important;gap:14px 18px !important}
+      nav span{font-size:20px !important}
+      /* two-column text/image layouts -> stack */
+      [style*="minmax(200px"],[style*="minmax(280px"],[style*="minmax(300px"],[style*="minmax(260px, 1fr)"]{grid-template-columns:minmax(0,1fr) !important;gap:28px !important}
+      /* fixed 5/6-track mosaics -> single column, drop pinning */
+      [style*="repeat(6"],[style*="repeat(5"],.more-cats{grid-template-columns:minmax(0,1fr) !important;grid-template-rows:none !important;grid-auto-rows:auto !important}
+      [style*="repeat(6"]>*,[style*="repeat(5"]>*,.more-cats>a{grid-column:auto !important;grid-row:auto !important;aspect-ratio:auto !important}
+      /* keep source-independent order: Landscaping, Pricing, then the rest */
+      [style*="repeat(6"]>a[href="Category-Landscaping.dc.html"]{order:1}
+      [style*="repeat(6"]>a[href="Pricing.dc.html"]{order:2}
+      [style*="repeat(6"]>a{order:3}
+      /* masonry + text columns */
+      [style*="column-count: 4"]{column-count:2 !important}
+      [style*="column-count: 3"],[style*="column-count: 2"]{column-count:1 !important}
+      /* fixed-height photo rows -> full width */
+      section img[style*="height: 385px"],section img[style*="height: 380px"],section img[style*="height: 300px"],section img[style*="height: 510px"]{height:auto !important;width:100% !important;max-width:100% !important}
+      /* fixed-width cards */
+      a[style*="calc("]{width:100% !important}
+      h1{font-size:clamp(24px,7vw,34px) !important}
+    }
+    @media (max-width:520px){
+      [style*="auto-fill"]{grid-template-columns:minmax(0,1fr) !important}
+      [style*="column-count: 4"]{column-count:1 !important}
+    }
   
     .pf-menu{position:relative}
     .pf-menu .pf-drop{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;z-index:40}
@@ -33,7 +65,7 @@
       <a href="#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
       <a href="Pricing.dc.html" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Pricing</a>
       <a href="Resources.dc.html" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Resources</a>
-      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#e29bcb;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
     </div>
   </nav>
 
@@ -42,15 +74,15 @@
     <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(28,20,32,0.4),rgba(28,20,32,0.6)),url('bg-texture.png');background-size:cover;background-position:center"></div>
     <div style="max-width:1200px;margin:0 auto;position:relative">
     <div style="display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(4,167px) auto;grid-auto-rows:130px;gap:24px">
-      <p style="grid-column:span 6;grid-row:5;font-size:12pt;font-weight:350;line-height:1.6;margin:0;max-width:90ch;color:rgba(246,238,248,0.75)"><b style="letter-spacing:0.12em">Disclaimer:</b> This website is as much an exploration of my adventures as it is a display of offerings - I may or may not be available for work along the lines of what is shown here. Currently, I am available for full-scale landscape design and installation and am <b style="letter-spacing:0.12em">always</b> open to other requests - <a href="Contact.dc.html">just send an email</a>. :)</p>
+    <a href="Pricing.dc.html" style="grid-column:1 / span 5;grid-row:5;display:block;text-decoration:none;color:#f6eef8;background:rgba(255,255,255,0.1);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:18px 26px">
+      <h3 style="font-size:17px;margin:0 0 6px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;line-height:1.3">Landscape Services and Pricing</h3>
+      <p style="font-size:15px;line-height:1.5;color:rgba(246,238,248,0.7);margin:0 0 8px">Consultation options, what's included, and where custom landscape budgets start.</p>
+      <span style="color:#e29bcb;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:6px">See pricing<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+    </a>
       <sc-for list="{{ categories }}" as="p" hint-placeholder-count="7">
         <a href="{{ p.href }}" style="display:flex;flex-direction:column;gap:10px;overflow:hidden;cursor:pointer;text-decoration:none;color:#f6eef8;background:rgba(255,255,255,0.1);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;grid-column:{{ p.colSpanCss }};grid-row:{{ p.rowSpanCss }}">
           <div style="position:relative;flex:1;min-height:0;overflow:hidden;border-radius:14px">
             <image-slot id="{{ p.slotId }}" src="{{ p.tile }}" shape="rounded" radius="14" style="width:100%;height:100%;pointer-events:none" placeholder="Project photo"></image-slot>
-            <button type="button" onClick="{{ p.openPreview }}" style="position:absolute;bottom:10px;right:10px;display:flex;align-items:center;gap:6px;background:#1c1420;border:none;border-radius:999px;padding:6px 12px;font-weight:600;font-size:11px;cursor:pointer;color:#f6eef8;box-shadow:0 3px 10px rgba(0,0,0,0.35)">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
-              Preview
-            </button>
           </div>
           <div style="padding:0 4px;flex-shrink:0">
             <h3 style="{{ p.titleStyle }}">{{ p.title }}</h3>
@@ -62,11 +94,44 @@
         </a>
       </sc-for>
     </div>
-    <a href="Pricing.dc.html" style="display:block;box-sizing:border-box;margin-top:24px;width:calc((100% - 5 * 24px) / 2 + 48px);max-width:100%;text-decoration:none;color:#f6eef8;background:rgba(255,255,255,0.1);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:28px 30px">
-      <h3 style="font-size:17px;margin:0 0 8px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;line-height:1.3">Landscape Services and Pricing</h3>
-      <p style="font-size:15px;line-height:1.6;color:rgba(246,238,248,0.7);margin:0 0 12px;max-width:70ch">Consultation options, what's included, and where custom landscape budgets start.</p>
-      <span style="color:#e29bcb;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:6px">See pricing<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
-    </a>
+    <p style="margin-top:0;padding-top:24px;font-size:12pt;font-weight:350;line-height:1.6;margin:0;max-width:90ch;color:rgba(246,238,248,0.75)"><b style="letter-spacing:0.12em">Disclaimer:</b> This website is as much an exploration of my adventures as it is a display of offerings.<br>I may or may not be available for work along the lines of what is shown here. Currently, I am available for full-scale landscape design and installation and am <b style="letter-spacing:0.12em">always</b> open to other requests - <a href="Contact.dc.html">just send an email</a>. :)</p>
+    <div style="margin-top:36px">
+    <span style="display:block;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#c9a9d6;font-weight:600;margin-bottom:24px">More categories</span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px">
+      <a href="Category-Hardscaping.dc.html" style="text-decoration:none;color:#f6eef8;display:flex;flex-direction:column;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
+        <img src="tile-hardscaping.webp" alt="Hardscaping" style="width:100%;flex:1;min-height:180px;object-fit:cover;border-radius:14px;display:block" />
+        <div style="padding:12px 4px 0">
+          <h3 style="font-size:16px;margin:0 0 4px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;line-height:1.25">Hardscaping</h3>
+          <p style="font-size:13px;line-height:1.4;color:rgba(246,238,248,0.6);margin:0 0 8px">Patios and parking lots, walkways and driveways.</p>
+          <span style="color:#e29bcb;font-weight:600;font-size:13px">Explore &rarr;</span>
+        </div>
+      </a>
+      <a href="Category-CowboyPools.dc.html" style="text-decoration:none;color:#f6eef8;display:flex;flex-direction:column;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
+        <img src="tile-cowboy-pools.webp" alt="Cowboy Pools" style="width:100%;flex:1;min-height:180px;object-fit:cover;border-radius:14px;display:block" />
+        <div style="padding:12px 4px 0">
+          <h3 style="font-size:16px;margin:0 0 4px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;line-height:1.25">Cowboy Pools</h3>
+          <p style="font-size:13px;line-height:1.4;color:rgba(246,238,248,0.6);margin:0 0 8px">The stock-tank pool legends of Austin, TX branch out.</p>
+          <span style="color:#e29bcb;font-weight:600;font-size:13px">Explore &rarr;</span>
+        </div>
+      </a>
+      <a href="Category-RainwaterCatchment.dc.html" style="text-decoration:none;color:#f6eef8;display:flex;flex-direction:column;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
+        <img src="tile-rainwater-catchment.webp" alt="Rainwater Catchment" style="width:100%;flex:1;min-height:180px;object-fit:cover;border-radius:14px;display:block" />
+        <div style="padding:12px 4px 0">
+          <h3 style="font-size:16px;margin:0 0 4px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;line-height:1.25">Rainwater Catchment</h3>
+          <p style="font-size:13px;line-height:1.4;color:rgba(246,238,248,0.6);margin:0 0 8px">Catch the rain, save it for a sunny day.</p>
+          <span style="color:#e29bcb;font-weight:600;font-size:13px">Explore &rarr;</span>
+        </div>
+      </a>
+      <a href="Category-Earthwork.dc.html" style="text-decoration:none;color:#f6eef8;display:flex;flex-direction:column;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
+        <img src="tile-earthwork.webp" alt="Earthwork" style="width:100%;flex:1;min-height:180px;object-fit:cover;border-radius:14px;display:block" />
+        <div style="padding:12px 4px 0">
+          <h3 style="font-size:16px;margin:0 0 4px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;line-height:1.25">Earthwork</h3>
+          <p style="font-size:13px;line-height:1.4;color:rgba(246,238,248,0.6);margin:0 0 8px">Large-scale land art.</p>
+          <span style="color:#e29bcb;font-weight:600;font-size:13px">Explore &rarr;</span>
+        </div>
+      </a>
+    </div>
+    </div>
     </div>
   </section>
 
@@ -78,7 +143,7 @@
       <a href="#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
       <a href="Pricing.dc.html" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Pricing</a>
       <a href="Resources.dc.html" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Resources</a>
-      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#e29bcb;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
     </div>
   </nav>
 
