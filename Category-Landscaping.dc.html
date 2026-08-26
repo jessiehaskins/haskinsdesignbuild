@@ -12,6 +12,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="./image-slot.js"></script>
   <style>body{margin:0;background:#1c1420} a{color:#e29bcb} a:hover{color:#f0b8dc}
+    /* mobile viewport guards */
+    html,body{max-width:100%;overflow-x:hidden}
+    *{min-width:0}
+    img,video,image-slot{max-width:100%}
+
+    /* mobile */
+    @media (max-width:820px){
+      nav{padding:16px clamp(16px,4vw,24px) !important;gap:12px !important}
+      nav>div{flex-wrap:wrap !important;gap:14px 18px !important}
+      nav span{font-size:20px !important}
+      /* two-column text/image layouts -> stack */
+      [style*="minmax(200px"],[style*="minmax(280px"],[style*="minmax(300px"],[style*="minmax(260px, 1fr)"]{grid-template-columns:minmax(0,1fr) !important;gap:28px !important}
+      /* fixed 5/6-track mosaics -> single column, drop pinning */
+      [style*="repeat(6"],[style*="repeat(5"],.more-cats{grid-template-columns:minmax(0,1fr) !important;grid-template-rows:none !important;grid-auto-rows:auto !important}
+      [style*="repeat(6"]>*,[style*="repeat(5"]>*,.more-cats>a{grid-column:auto !important;grid-row:auto !important;aspect-ratio:auto !important}
+      /* masonry + text columns */
+      [style*="column-count: 4"]{column-count:2 !important}
+      [style*="column-count: 3"],[style*="column-count: 2"]{column-count:1 !important}
+      /* fixed-height photo rows -> full width */
+      section img[style*="height: 385px"],section img[style*="height: 380px"],section img[style*="height: 300px"],section img[style*="height: 510px"]{height:auto !important;width:100% !important;max-width:100% !important}
+      /* fixed-width cards */
+      a[style*="calc("]{width:100% !important}
+      h1{font-size:clamp(24px,7vw,34px) !important}
+      div:has(>img[alt*="butterfly"]){display:none !important}
+    }
+    @media (max-width:520px){
+      [style*="auto-fill"]{grid-template-columns:minmax(0,1fr) !important}
+      [style*="column-count: 4"]{column-count:1 !important}
+    }
+    .more-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+    .more-cats>a{grid-column:auto !important;grid-row:auto !important}
+    
     .pf-menu{position:relative}
     .pf-menu .pf-drop{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;z-index:40}
     .pf-menu:hover .pf-drop,.pf-menu:focus-within .pf-drop{display:block}
@@ -28,16 +60,16 @@
       <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
       <a href="Pricing.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Pricing</a>
       <a href="Resources.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Resources</a>
-      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#e29bcb;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
     </div>
   </nav>
 
-  <section style="position:relative;overflow:visible;padding:110px clamp(20px,5vw,72px) 84px">
+  <section style="position:relative;overflow:hidden;padding:110px clamp(20px,5vw,72px) 84px">
     <div style="position:absolute;top:-140px;right:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(226,155,203,0.35),transparent 70%);filter:blur(10px);pointer-events:none"></div>
     <div style="position:absolute;bottom:-180px;left:-120px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(167,154,209,0.3),transparent 70%);filter:blur(10px);pointer-events:none"></div>
     <div style="max-width:1200px;margin:0 auto;position:relative;display:grid;grid-template-columns:minmax(200px,260px) 1fr;gap:56px;align-items:start">
       <div>
-        <h1 style="font-family:'Poppins',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.01em;font-size:clamp(27px,3.3vw,39px);line-height:1.18;margin:0;padding-top:34px">A <span style="color:#e29bcb">wild,</span><br><span style="white-space:nowrap"><span style="text-transform:lowercase;font-size:0.7em">often</span> <span style="color:#e29bcb">native,</span></span><br>and<br><span style="color:#e29bcb">ecological</span><br>approach<br>to<br>landscapes</h1>
+        <h1 style="font-family:'Poppins',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.01em;font-size:clamp(27px,3.3vw,39px);line-height:1.18;margin:0;padding-top:34px">A <span style="color:#e29bcb">wild,</span><br><span style="white-space:nowrap"><span style="text-transform:lowercase;font-size:0.7em">often</span> <span style="color:#e29bcb">native,</span></span><br><span style="white-space:nowrap">and <span style="font-size:0.7em;text-transform:lowercase">overall</span></span><br><span style="color:#e29bcb">ecological</span><br>approach<br>to<br>landscapes</h1>
       </div>
       <div>
         <p style="font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 14px;color:rgba(246,238,248,0.85)">Our goals are, in no particular order:</p>
@@ -80,33 +112,33 @@
 
   <section style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 72px">
     <span style="display:block;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#c9a9d6;font-weight:600;margin-bottom:24px">More categories</span>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px">
-      <a href="Category-Hardscaping.dc.html" style="text-decoration:none;color:#f6eef8;display:block;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
-        <img src="tile-hardscaping.webp" alt="Hardscaping" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block" />
+    <div class="more-cats">
+      <a href="Category-Hardscaping.dc.html" style="grid-column:3 / span 3;grid-row:1;text-decoration:none;color:#f6eef8;display:flex;flex-direction:column;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
+        <img src="tile-hardscaping.webp" alt="Hardscaping" style="width:100%;flex:1;min-height:180px;object-fit:cover;border-radius:14px;display:block" />
         <div style="padding:12px 4px 0">
           <h3 style="font-size:16px;margin:0 0 4px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;line-height:1.25">Hardscaping</h3>
           <p style="font-size:13px;line-height:1.4;color:rgba(246,238,248,0.6);margin:0 0 8px">Patios and parking lots, walkways and driveways.</p>
           <span style="color:#e29bcb;font-weight:600;font-size:13px">Explore →</span>
         </div>
       </a>
-      <a href="Category-CowboyPools.dc.html" style="text-decoration:none;color:#f6eef8;display:block;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
-        <img src="tile-cowboy-pools.webp" alt="Cowboy Pools" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block" />
+      <a href="Category-CowboyPools.dc.html" style="grid-column:1 / span 2;grid-row:1;text-decoration:none;color:#f6eef8;display:flex;flex-direction:column;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
+        <img src="tile-cowboy-pools.webp" alt="Cowboy Pools" style="width:100%;flex:1;min-height:180px;object-fit:cover;border-radius:14px;display:block" />
         <div style="padding:12px 4px 0">
           <h3 style="font-size:16px;margin:0 0 4px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;line-height:1.25">Cowboy Pools</h3>
           <p style="font-size:13px;line-height:1.4;color:rgba(246,238,248,0.6);margin:0 0 8px">The stock-tank pool legends of Austin, TX branch out.</p>
           <span style="color:#e29bcb;font-weight:600;font-size:13px">Explore →</span>
         </div>
       </a>
-      <a href="Category-RainwaterCatchment.dc.html" style="text-decoration:none;color:#f6eef8;display:block;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
-        <img src="tile-rainwater-catchment.webp" alt="Rainwater Catchment" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block" />
+      <a href="Category-RainwaterCatchment.dc.html" style="grid-column:4 / span 2;grid-row:2;text-decoration:none;color:#f6eef8;display:flex;flex-direction:column;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
+        <img src="tile-rainwater-catchment.webp" alt="Rainwater Catchment" style="width:100%;flex:1;min-height:180px;object-fit:cover;border-radius:14px;display:block" />
         <div style="padding:12px 4px 0">
           <h3 style="font-size:16px;margin:0 0 4px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;line-height:1.25">Rainwater Catchment</h3>
           <p style="font-size:13px;line-height:1.4;color:rgba(246,238,248,0.6);margin:0 0 8px">Catch the rain, save it for a sunny day.</p>
           <span style="color:#e29bcb;font-weight:600;font-size:13px">Explore →</span>
         </div>
       </a>
-      <a href="Category-Earthwork.dc.html" style="text-decoration:none;color:#f6eef8;display:block;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
-        <img src="tile-earthwork.webp" alt="Earthwork" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block" />
+      <a href="Category-Earthwork.dc.html" style="grid-column:1 / span 3;grid-row:2;text-decoration:none;color:#f6eef8;display:flex;flex-direction:column;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
+        <img src="tile-earthwork.webp" alt="Earthwork" style="width:100%;flex:1;min-height:180px;object-fit:cover;border-radius:14px;display:block" />
         <div style="padding:12px 4px 0">
           <h3 style="font-size:16px;margin:0 0 4px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;line-height:1.25">Earthwork</h3>
           <p style="font-size:13px;line-height:1.4;color:rgba(246,238,248,0.6);margin:0 0 8px">Large-scale land art.</p>
@@ -134,7 +166,7 @@
       <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#fdf8f5;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
       <a href="Pricing.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Pricing</a>
       <a href="Resources.dc.html" style="text-decoration:none;color:#fdf8f5;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">Resources</a>
-      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#fdf8f5;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#e29bcb;text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
     </div>
   </nav>
 
