@@ -24,7 +24,7 @@
       nav span{font-size:7.1vw !important;letter-spacing:0 !important;white-space:nowrap;display:block;text-align:left}
       nav>div{width:100%;display:grid !important;grid-template-columns:1fr auto;column-gap:16px;row-gap:10px !important;align-items:start}
       nav>div>a{grid-column:1}
-      nav>div>a[href="Contact.dc.html"]{grid-column:2;grid-row:1 / span 5;align-self:center;justify-self:end}
+      nav>div>a[href="Contact.dc.html"]{grid-column:2;grid-row:1 / span 5;align-self:start;justify-self:end}
       /* two-column text/image layouts -> stack */
       [style*="minmax(200px"],[style*="minmax(280px"],[style*="minmax(300px"],[style*="minmax(260px, 1fr)"]{grid-template-columns:minmax(0,1fr) !important;gap:28px !important}
       /* fixed 5/6-track mosaics -> single column, drop pinning */
@@ -39,6 +39,7 @@
       a[style*="calc("]{width:100% !important}
       h1{font-size:clamp(24px,7vw,34px) !important}
       section{padding-top:28px !important}
+      .mobile-butterfly{display:block !important;position:absolute;right:8px;top:100%;transform:translateY(-42%);height:120px;width:auto;z-index:6;pointer-events:none}
     }
     @media (max-width:520px){
       [style*="auto-fill"]{grid-template-columns:minmax(0,1fr) !important}
@@ -47,7 +48,7 @@
 </helmet>
 <div style="background:#1c1420;color:#f6eef8;min-height:100vh;font-family:'Work Sans',sans-serif">
 
-  <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+  <nav style="position:relative;background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
     <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:35px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
     <div style="display:flex;align-items:center;gap:24px">
       <a href="About.dc.html" style="text-decoration:none;color:#3b2540;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:0.04em">About</a>
@@ -56,7 +57,8 @@
       <a href="Resources.dc.html" style="text-decoration:none;color:#3b2540;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:0.04em">Resources</a>
       <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#e29bcb;text-decoration:none;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
     </div>
-  </nav>
+      <img src="butterfly-mark.png" alt="Haskins Design &amp; Build butterfly mark" class="mobile-butterfly" style="display:none" />
+</nav>
 
   <section style="max-width:1200px;margin:0 auto;padding:72px clamp(20px,5vw,72px) 40px">
     <h1 style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.04em;font-size:clamp(24px,3.4vw,38px);line-height:1.15;margin:0 0 16px">Resources</h1>

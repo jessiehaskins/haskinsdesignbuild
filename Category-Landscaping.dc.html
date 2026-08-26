@@ -25,7 +25,7 @@
       nav span{font-size:7.1vw !important;letter-spacing:0 !important;white-space:nowrap;display:block;text-align:left}
       nav>div{width:100%;display:grid !important;grid-template-columns:1fr auto;column-gap:16px;row-gap:10px !important;align-items:start}
       nav>div>a{grid-column:1}
-      nav>div>a[href="Contact.dc.html"]{grid-column:2;grid-row:1 / span 5;align-self:center;justify-self:end}
+      nav>div>a[href="Contact.dc.html"]{grid-column:2;grid-row:1 / span 5;align-self:start;justify-self:end}
       /* two-column text/image layouts -> stack */
       [style*="minmax(200px"],[style*="minmax(280px"],[style*="minmax(300px"],[style*="minmax(260px, 1fr)"]{grid-template-columns:minmax(0,1fr) !important;gap:28px !important}
       /* fixed 5/6-track mosaics -> single column, drop pinning */
@@ -40,7 +40,8 @@
       a[style*="calc("]{width:100% !important}
       h1{font-size:clamp(24px,7vw,34px) !important}
       section{padding-top:28px !important}
-      div:has(>img[alt*="butterfly"]){display:none !important}
+      div:has(>img[alt*="butterfly"]){display:flex !important;right:8px !important;bottom:auto !important;top:-96px !important;transform:none !important;width:150px !important;height:150px !important;z-index:6 !important}
+      div:has(>img[alt*="butterfly"]) img{height:120px !important}
     }
     @media (max-width:520px){
       [style*="auto-fill"]{grid-template-columns:minmax(0,1fr) !important}
