@@ -22,9 +22,10 @@
       nav{padding:16px clamp(16px,4vw,24px) !important;gap:12px !important}
       nav>div{flex-wrap:wrap !important;gap:14px 18px !important}
       nav>a:first-child{width:100%;display:block}
-      nav span{font-size:6.2vw !important;letter-spacing:0 !important;white-space:nowrap;display:block;text-align:left}
-      nav>div{width:100%;justify-content:flex-start !important}
-      nav>div>a[href="Contact.dc.html"]{margin-left:auto}
+      nav span{font-size:7.1vw !important;letter-spacing:0 !important;white-space:nowrap;display:block;text-align:left}
+      nav>div{width:100%;display:grid !important;grid-template-columns:1fr auto;column-gap:16px;row-gap:10px !important;align-items:start}
+      nav>div>a{grid-column:1}
+      nav>div>a[href="Contact.dc.html"]{grid-column:2;grid-row:1 / span 5;align-self:center;justify-self:end}
       /* two-column text/image layouts -> stack */
       [style*="minmax(200px"],[style*="minmax(280px"],[style*="minmax(300px"],[style*="minmax(260px, 1fr)"]{grid-template-columns:minmax(0,1fr) !important;gap:28px !important}
       /* fixed 5/6-track mosaics -> single column, drop pinning */
@@ -38,6 +39,7 @@
       /* fixed-width cards */
       a[style*="calc("]{width:100% !important}
       h1{font-size:clamp(24px,7vw,34px) !important}
+      section{padding-top:28px !important}
       div:has(>img[alt*="butterfly"]){display:none !important}
     }
     @media (max-width:520px){
@@ -57,7 +59,7 @@
 </helmet>
 <div style="background:#1c1420;color:#f6eef8;min-height:100vh;font-family:'Work Sans',sans-serif">
   <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
-    <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:31px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
+    <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:35px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
     <div style="display:flex;align-items:center;gap:24px">
       <a href="About.dc.html" style="text-decoration:none;color:#3b2540;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:0.04em">About</a>
       <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#3b2540;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
@@ -67,7 +69,7 @@
     </div>
   </nav>
 
-  <section style="position:relative;overflow:hidden;padding:110px clamp(20px,5vw,72px) 84px">
+  <section style="position:relative;overflow:visible;z-index:3;padding:110px clamp(20px,5vw,72px) 84px">
     <div style="position:absolute;top:-140px;right:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(226,155,203,0.35),transparent 70%);filter:blur(10px);pointer-events:none"></div>
     <div style="position:absolute;bottom:-180px;left:-120px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(167,154,209,0.3),transparent 70%);filter:blur(10px);pointer-events:none"></div>
     <div style="max-width:1200px;margin:0 auto;position:relative;display:grid;grid-template-columns:minmax(200px,260px) 1fr;gap:56px;align-items:start">
@@ -91,7 +93,7 @@
         </ul>
       </div>
     </div>
-    <div style="position:absolute;right:calc(clamp(20px,5vw,72px) - 32px);bottom:-32px;transform:translateY(15%);width:230px;height:230px;pointer-events:none;z-index:1;display:flex;align-items:center;justify-content:center">
+    <div style="position:absolute;right:calc(clamp(20px,5vw,72px) - 32px);bottom:-32px;transform:translateY(15%);width:230px;height:230px;pointer-events:none;z-index:5;display:flex;align-items:center;justify-content:center">
       <div style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle, rgba(226,155,203,0.35) 0%, rgba(167,154,209,0.22) 45%, transparent 72%)"></div>
       <img src="butterfly-mark.png" alt="Haskins Design &amp; Build butterfly mark" style="position:relative;height:165px;width:auto;z-index:2;pointer-events:none" />
     </div>
@@ -163,7 +165,7 @@
   </section>
 
   <nav style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
-    <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:31px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
+    <a href="Portfolio-Overview.dc.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:35px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
     <div style="display:flex;align-items:center;gap:24px">
       <a href="About.dc.html" style="text-decoration:none;color:#3b2540;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:0.04em">About</a>
       <a href="Portfolio-Overview.dc.html#work" style="text-decoration:none;color:#3b2540;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
