@@ -1,14 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8">
-<title>Haskins Design &amp; Build</title>
-<meta http-equiv="refresh" content="0; url=Portfolio-Overview.dc.html">
-<link rel="canonical" href="Portfolio-Overview.dc.html">
-<script>window.location.replace('Portfolio-Overview.dc.html');</script>
-<style>body{margin:0;background:#1c1420;color:#f6eef8;font-family:system-ui,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh}a{color:#e29bcb}</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-<p>Loading <a href="Portfolio-Overview.dc.html">Haskins Design &amp; Build</a>&hellip;</p>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    body{margin:0;background:#1c1420}
+    a{color:#e29bcb}
+    a:hover{color:#f0b8dc}
+    /* mobile viewport guards */
+    html,body{max-width:100%;overflow-x:hidden}
+    *{min-width:0}
+    img,video,image-slot{max-width:100%}
+
+    /* mobile */
+    @media (max-width:820px){
+      nav{padding:16px clamp(16px,4vw,24px) !important;gap:12px !important}
+      nav>div{flex-wrap:wrap !important;gap:14px 18px !important}
+      nav>a:first-child{width:100%;display:block}
+      nav span{font-size:7.1vw !important;letter-spacing:0 !important;white-space:nowrap;display:block;text-align:left}
+      nav>div{width:100%;height:150px;display:grid !important;grid-template-columns:1fr auto;column-gap:14px;row-gap:4px !important;align-items:end;align-content:end}
+      nav>div>a{grid-column:1;font-size:19px !important;line-height:1.15}
+      nav>div>a[href="Contact.dc.html"]{grid-column:2;grid-row:1 / span 5;justify-self:end;align-self:stretch;writing-mode:vertical-rl;padding:0 10px !important;justify-content:center;font-size:13px !important;letter-spacing:0.06em}
+      /* two-column text/image layouts -> stack */
+      [style*="minmax(200px"],[style*="minmax(280px"],[style*="minmax(300px"],[style*="minmax(260px, 1fr)"]{grid-template-columns:minmax(0,1fr) !important;gap:28px !important}
+      /* fixed 5/6-track mosaics -> single column, drop pinning */
+      [style*="repeat(6"],[style*="repeat(5"],.more-cats{grid-template-columns:minmax(0,1fr) !important;grid-template-rows:none !important;grid-auto-rows:auto !important}
+      [style*="repeat(6"]>*,[style*="repeat(5"]>*,.more-cats>a{grid-column:auto !important;grid-row:auto !important;aspect-ratio:auto !important}
+      /* keep source-independent order: Landscaping, Pricing, then the rest */
+      [style*="repeat(6"]>a[href="Category-Landscaping.dc.html"]{order:1}
+      [style*="repeat(6"]>a[href="Pricing.dc.html"]{order:2}
+      [style*="repeat(6"]>a{order:3}
+      /* masonry + text columns */
+      [style*="column-count: 4"]{column-count:2 !important}
+      [style*="column-count: 3"],[style*="column-count: 2"]{column-count:1 !important}
+      /* fixed-height photo rows -> full width */
+      section img[style*="height: 385px"],section img[style*="height: 380px"],section img[style*="height: 300px"],section img[style*="height: 510px"]{height:auto !important;width:100% !important;max-width:100% !important}
+      /* fixed-width cards */
+      a[style*="calc("]{width:100% !important}
+      h1{font-size:clamp(24px,7vw,34px) !important}
+      section{padding-top:28px !important}
+      nav{display:grid !important;grid-template-columns:auto 1fr;column-gap:16px;align-items:start}
+      nav>a:first-child{grid-column:1 / -1}
+      .mobile-butterfly{display:block !important;grid-column:1;grid-row:2;height:150px;width:auto;pointer-events:none}
+      nav>div{grid-column:2;grid-row:2}
+    }
+    @media (max-width:520px){
+      [style*="auto-fill"]{grid-template-columns:minmax(0,1fr) !important}
+      [style*="column-count: 4"]{column-count:1 !important}
+    }
+  
+    .pf-menu{position:relative}
+    .pf-menu .pf-drop{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;z-index:40}
+    .pf-menu:hover .pf-drop,.pf-menu:focus-within .pf-drop{display:block}
+    .pf-drop-inner{background:#241b2b;border:1px solid rgba(246,238,248,0.12);border-radius:14px;padding:8px;min-width:230px;box-shadow:0 14px 40px rgba(0,0,0,0.45);display:flex;flex-direction:column}
+    .pf-drop-inner a{display:block;padding:9px 14px;border-radius:9px;text-decoration:none;color:#f6eef8;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap}
+    .pf-drop-inner a:hover{background:rgba(226,155,203,0.16);color:#f0b8dc}
+  </style>
+</helmet>
+<div style="background:#1c1420;color:#f6eef8;min-height:100vh;font-family:'Work Sans',sans-serif">
+
+  <nav style="position:relative;background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;overflow:visible">
+    <a href="index.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:35px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
+    <div style="display:flex;align-items:center;gap:28px">
+      <a href="About.dc.html" style="text-decoration:none;color:#3b2540;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">About</a>
+      <a href="#work" style="text-decoration:none;color:#3b2540;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="Pricing.dc.html" style="text-decoration:none;color:#3b2540;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Pricing</a>
+      <a href="Resources.dc.html" style="text-decoration:none;color:#3b2540;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Resources</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#e29bcb;text-decoration:none;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+    </div>
+      <img src="butterfly-mark.png" alt="Haskins Design &amp; Build butterfly mark" class="mobile-butterfly" style="display:none" />
+</nav>
+
+
+  <section id="work" style="position:relative;padding:72px clamp(20px,5vw,72px)">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(28,20,32,0.4),rgba(28,20,32,0.6)),url('bg-texture.png');background-size:cover;background-position:center"></div>
+    <div style="max-width:1200px;margin:0 auto;position:relative">
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(4,167px) auto;grid-auto-rows:130px;gap:24px">
+    <a href="Pricing.dc.html" style="grid-column:1 / span 5;grid-row:5;display:block;text-decoration:none;color:#f6eef8;background:rgba(255,255,255,0.1);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:18px 26px">
+      <h3 style="font-size:17px;margin:0 0 6px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;line-height:1.3">Landscape Services and Pricing</h3>
+      <p style="font-size:15px;line-height:1.5;color:rgba(246,238,248,0.7);margin:0 0 8px">Consultation options, and a wordy description what I'm available for and how I work.</p>
+      <span style="color:#e29bcb;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:6px">See pricing<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+    </a>
+      <sc-for list="{{ categories }}" as="p" hint-placeholder-count="7">
+        <a href="{{ p.href }}" style="display:flex;flex-direction:column;gap:10px;overflow:hidden;cursor:pointer;text-decoration:none;color:#f6eef8;background:rgba(255,255,255,0.1);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;grid-column:{{ p.colSpanCss }};grid-row:{{ p.rowSpanCss }}">
+          <div style="position:relative;flex:1;min-height:0;overflow:hidden;border-radius:14px">
+            <image-slot id="{{ p.slotId }}" src="{{ p.tile }}" shape="rounded" radius="14" style="width:100%;height:100%;pointer-events:none" placeholder="Project photo"></image-slot>
+          </div>
+          <div style="padding:0 4px;flex-shrink:0">
+            <h3 style="{{ p.titleStyle }}">{{ p.title }}</h3>
+            <sc-if value="{{ p.showBlurb }}" hint-placeholder-val="{{ true }}">
+              <p style="{{ p.blurbStyle }}">{{ p.blurb }}</p>
+            </sc-if>
+            <span style="color:#e29bcb;font-weight:600;font-size:13px;display:inline-flex;align-items:center;gap:6px;white-space:nowrap">Explore<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+    <p style="margin-top:0;padding-top:24px;font-size:12pt;font-weight:350;line-height:1.6;margin:0;max-width:90ch;color:rgba(246,238,248,0.75)"><b style="letter-spacing:0.12em">Disclaimer:</b> This website is as much an exploration of my adventures as it is a display of offerings. I may or may not be available for work along the lines of what is shown here.<br><br>Currently, I am available for full-scale landscape design and installation and am <b style="letter-spacing:0.12em">always</b> open to other requests - <a href="Contact.dc.html">just send an email</a>. :)</p>
+    <div style="margin-top:36px">
+    <span style="display:block;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#c9a9d6;font-weight:600;margin-bottom:24px">More categories</span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px">
+      <a href="Category-Hardscaping.dc.html" style="text-decoration:none;color:#f6eef8;display:flex;flex-direction:column;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
+        <img src="tile-hardscaping.webp" alt="Hardscaping" style="width:100%;flex:1;min-height:180px;object-fit:cover;border-radius:14px;display:block" />
+        <div style="padding:12px 4px 0">
+          <h3 style="font-size:16px;margin:0 0 4px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;line-height:1.25">Hardscaping</h3>
+          <p style="font-size:13px;line-height:1.4;color:rgba(246,238,248,0.6);margin:0 0 8px">From my era of giant heavy puzzle work.</p>
+          <span style="color:#e29bcb;font-weight:600;font-size:13px">Explore &rarr;</span>
+        </div>
+      </a>
+      <a href="Category-CowboyPools.dc.html" style="text-decoration:none;color:#f6eef8;display:flex;flex-direction:column;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
+        <img src="cp-10.webp" alt="Cowboy Pools" style="width:100%;flex:1;min-height:180px;object-fit:cover;border-radius:14px;display:block" />
+        <div style="padding:12px 4px 0">
+          <h3 style="font-size:16px;margin:0 0 4px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;line-height:1.25">Cowboy Pools</h3>
+          <p style="font-size:13px;line-height:1.4;color:rgba(246,238,248,0.6);margin:0 0 8px">The Austin, TX stock tank pool legends leak into the big H.</p>
+          <span style="color:#e29bcb;font-weight:600;font-size:13px">Explore &rarr;</span>
+        </div>
+      </a>
+      <a href="Category-RainwaterCatchment.dc.html" style="text-decoration:none;color:#f6eef8;display:flex;flex-direction:column;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
+        <img src="tile-rainwater-catchment.webp" alt="Rainwater Catchment" style="width:100%;flex:1;min-height:180px;object-fit:cover;border-radius:14px;display:block" />
+        <div style="padding:12px 4px 0">
+          <h3 style="font-size:16px;margin:0 0 4px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;line-height:1.25">Rainwater Catchment</h3>
+          <p style="font-size:13px;line-height:1.4;color:rgba(246,238,248,0.6);margin:0 0 8px">Catch the rain, save it for a sunny day.</p>
+          <span style="color:#e29bcb;font-weight:600;font-size:13px">Explore &rarr;</span>
+        </div>
+      </a>
+      <a href="Category-Earthwork.dc.html" style="text-decoration:none;color:#f6eef8;display:flex;flex-direction:column;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:14px;overflow:hidden">
+        <img src="tile-earthwork.webp" alt="Earthwork" style="width:100%;flex:1;min-height:180px;object-fit:cover;border-radius:14px;display:block" />
+        <div style="padding:12px 4px 0">
+          <h3 style="font-size:16px;margin:0 0 4px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;line-height:1.25">Earthwork</h3>
+          <p style="font-size:13px;line-height:1.4;color:rgba(246,238,248,0.6);margin:0 0 8px">Large-scale land art.</p>
+          <span style="color:#e29bcb;font-weight:600;font-size:13px">Explore &rarr;</span>
+        </div>
+      </a>
+    </div>
+    </div>
+    </div>
+  </section>
+
+
+  <nav id="contact" style="background:linear-gradient(135deg,#e6b8d8,#b9a8d6);padding:22px clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+    <a href="index.html" style="text-decoration:none"><span style="font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;font-size:35px;color:#fdf8f5">Haskins Design &amp; Build</span></a>
+    <div style="display:flex;align-items:center;gap:28px">
+      <a href="About.dc.html" style="text-decoration:none;color:#3b2540;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">About</a>
+      <a href="#work" style="text-decoration:none;color:#3b2540;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Portfolio</a>
+      <a href="Pricing.dc.html" style="text-decoration:none;color:#3b2540;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Pricing</a>
+      <a href="Resources.dc.html" style="text-decoration:none;color:#3b2540;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em">Resources</a>
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#1c1420;color:#e29bcb;text-decoration:none;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:0.03em">Contact</a>
+    </div>
+  </nav>
+
+  <div style="max-width:1200px;margin:0 auto;padding:24px clamp(20px,5vw,72px);font-size:13px;color:rgba(246,238,248,0.45)">Haskins Design &amp; Build</div>
+
+  <sc-if value="{{ previewOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;background:rgba(0,0,0,0.65);display:flex;align-items:center;justify-content:center;z-index:50;padding:20px" onClick="{{ closePreview }}">
+      <div style="background:#271e2e;border:1px solid rgba(246,238,248,0.1);border-radius:20px;max-width:720px;width:100%;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,0.5)" onClick="{{ stop }}">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px">
+          <span style="font-weight:600;font-size:17px;color:#f6eef8">{{ previewTitle }}</span>
+          <button type="button" aria-label="Close" onClick="{{ closePreview }}" style="width:32px;height:32px;border-radius:999px;border:none;background:rgba(246,238,248,0.1);display:flex;align-items:center;justify-content:center;cursor:pointer;color:#f6eef8">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+          </button>
+        </div>
+        <div style="aspect-ratio:16/9;background:#0f0a13;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#f6eef8">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+          <span style="font-size:13px">Drop a short preview video here</span>
+        </div>
+        <div style="margin-top:18px">
+          <a href="{{ previewHref }}" style="display:inline-flex;align-items:center;padding:11px 22px;border-radius:999px;background:#e29bcb;color:#1c1420;text-decoration:none;font-weight:700;font-size:14px">See more</a>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { previewSlug: null };
+
+  categories = [
+    { slug: 'landscaping', title: 'Landscape Design & Installation', blurb: "Landscape work since 2012, built around each site's unique blend of micro-ecosystems and shaped by low-maintenance methods and a preference for native, edible, and well-adapted plants.", href: 'Category-Landscaping.dc.html', colSpan: 6, rowSpan: 4, rowStart: 1, showBlurb: true },
+    { slug: 'art-misc', title: 'Campervan / Art / Misc / Furniture', blurb: 'One-off installations, builds, displays, furniture, and other weird arrangements.', href: 'Category-ArtMisc.dc.html', colSpan: 4, rowSpan: 4, rowStart: 6, colStart: 1, showBlurb: true },
+  ];
+
+  renderVals() {
+    const active = this.categories.find(p => p.slug === this.state.previewSlug);
+    return {
+      blockNav: (e) => { e.preventDefault(); e.stopPropagation(); },
+      stopSlot: (e) => { e.preventDefault(); e.stopPropagation(); },
+      categories: this.categories.map(p => ({
+        ...p,
+        tile: p.slug === 'landscaping' ? 'tile3-landscaping.jpeg' : `tile-${p.slug}.webp`,
+        blurbStyle: `font-size:${p.slug === 'landscaping' ? 18 : 13}px;font-weight:${p.slug === 'landscaping' ? 350 : 400};line-height:1.4;color:rgba(246,238,248,0.6);margin:0 0 8px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden`,
+        titleStyle: `font-size:${p.slug === 'landscaping' ? 32 : 16}px;margin:0 0 4px;font-weight:${p.slug === 'landscaping' ? 900 : 700};text-transform:uppercase;letter-spacing:0.1em;line-height:1.25`,
+        slotId: `tile-slot-${p.slug}`,
+        onCardClick: (e) => {
+          if (e.target.closest('image-slot') || e.target.closest('a') || e.target.closest('button')) return;
+          window.location.href = p.href;
+        },
+        colSpanCss: p.colStart ? `${p.colStart} / span ${p.colSpan}` : `span ${p.colSpan}`,
+        rowSpanCss: `${p.rowStart} / span ${p.rowSpan}`,
+        openPreview: (e) => { e.preventDefault(); e.stopPropagation(); this.setState({ previewSlug: p.slug }); }
+      })),
+      previewOpen: !!this.state.previewSlug,
+      previewTitle: active ? active.title : '',
+      previewHref: active ? active.href : '#',
+      closePreview: () => this.setState({ previewSlug: null }),
+      stop: (e) => e.stopPropagation()
+    };
+  }
+}
+</script>
 </body>
 </html>
